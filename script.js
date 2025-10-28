@@ -61,14 +61,31 @@ function submitOrder(event) {
   })
   .then(response => {
     if (response.ok) {
-      alert("Order placed successfully! We'll contact you soon via email.");
+      showThankYouScreen();
       cart = [];
       updateCartCount();
-      closePopup();
       document.getElementById("checkout-form").reset();
     } else {
       alert("Something went wrong. Please try again.");
     }
   })
   .catch(() => alert("Network error. Please check your connection."));
+}
+
+// === SHOW THANK YOU SCREEN ===
+function showThankYouScreen() {
+  const popup = document.getElementById("checkout-popup");
+  popup.innerHTML = `
+    <div class="popup-content">
+      <h2>THANK YOU 🐾</h2>
+      <p>Your order has been placed successfully!</p>
+      <p>Team <b>UNDERDAWGS</b> will contact you shortly.</p>
+      <button onclick="closeThankYou()" class="add-cart">Close</button>
+    </div>
+  `;
+  popup.style.display = "flex";
+}
+
+function closeThankYou() {
+  document.getElementById("checkout-popup").style.display = "none";
 }
