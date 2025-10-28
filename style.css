@@ -1,4 +1,4 @@
-/* UNDERDAWGS FINAL CSS (4 HOODIES PER VIEW) */
+/* UNDERDAWGS - FINAL MOBILE GRID FIXED 4-HOODIES VIEW */
 
 body {
   margin: 0;
@@ -8,6 +8,7 @@ body {
   color: #fff;
 }
 
+/* HEADER */
 header {
   display: flex;
   justify-content: space-between;
@@ -57,6 +58,7 @@ header {
   background-color: #ff0000;
 }
 
+/* MAIN SECTION */
 main {
   text-align: center;
   padding: 30px 10px;
@@ -73,70 +75,79 @@ h2 {
   margin-bottom: 30px;
 }
 
+/* PRODUCTS GRID */
 .products {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 20px;
   justify-content: center;
-  padding: 0 20px;
-  max-width: 1200px;
+  padding: 0 10px 40px;
+  max-width: 1300px;
   margin: auto;
 }
 
+/* PRODUCT CARD */
 .product {
   background-color: #111;
   border: 1px solid #222;
   border-radius: 15px;
   padding: 10px;
   transition: transform 0.3s ease;
-  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 300px; /* smaller, so 4 hoodies fit at once */
+  overflow: hidden;
 }
 
 .product:hover {
   transform: scale(1.03);
 }
 
+/* PRODUCT IMAGE */
 .product img {
   width: 100%;
-  height: 300px;
+  height: 180px;
   object-fit: cover;
   border-radius: 10px;
 }
 
+/* PRODUCT DETAILS */
 .product h3 {
   color: #fff;
-  margin-top: 10px;
-  font-size: 16px;
-}
-
-.product p {
-  color: #aaa;
+  margin-top: 8px;
   font-size: 14px;
+  text-align: center;
 }
 
 .price {
   color: #b60000;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
-  margin-top: 5px;
+  margin-top: 4px;
+  text-align: center;
 }
 
+/* ADD TO CART BUTTON */
 .add-to-cart {
   background-color: #b60000;
   color: #fff;
   border: none;
-  padding: 8px 15px;
+  padding: 6px 12px;
   border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
-  margin-top: 10px;
+  margin-top: 5px;
   transition: 0.3s;
+  align-self: center;
+  font-size: 13px;
 }
 
 .add-to-cart:hover {
   background-color: #ff0000;
 }
 
+/* CART POPUP & CHECKOUT */
 .cart-popup,
 .checkout-form {
   display: none;
@@ -169,6 +180,7 @@ button.close-cart {
   margin-top: 10px;
 }
 
+/* CHECKOUT FORM */
 .checkout-form input {
   width: 100%;
   padding: 10px;
@@ -191,15 +203,27 @@ button.close-cart {
   background-color: #ff0000;
 }
 
-/* Responsive */
-@media (min-width: 768px) {
+/* RESPONSIVE SETTINGS */
+@media (min-width: 1024px) {
   .products {
     grid-template-columns: repeat(4, 1fr);
+  }
+  .product {
+    height: 420px;
+  }
+  .product img {
+    height: 280px;
   }
 }
 
 @media (max-width: 767px) {
   .products {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* 2 per row on mobile */
   }
-   }
+  .product {
+    height: 280px; /* smaller so 2 rows fit (4 hoodies visible) */
+  }
+  .product img {
+    height: 160px;
+  }
+}
