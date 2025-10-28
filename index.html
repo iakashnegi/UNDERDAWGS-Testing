@@ -1,77 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UNDERDAWGS - Hoodies</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <header>
-    <div class="logo">
-      <img src="logo.png" alt="UNDERDAWGS Logo">
-      <h1>UNDERDAWGS</h1>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo-section">
+      <img src="logo.png" alt="UNDERDAWGS Logo" class="logo">
+      <div class="brand-text">
+        <h1 class="brand-name">UNDERDAWGS</h1>
+        <p class="tagline-small">Rise from the Streets</p>
+      </div>
     </div>
-    <button id="cart-btn">🛒 Cart (<span id="cart-count">0</span>)</button>
+    <button id="cart-btn" class="cart-btn">Cart (<span id="cart-count">0</span>)</button>
   </header>
 
-  <main class="products-container">
-    <div class="product" onclick="location.href='hoodie1.html'">
-      <img src="hoodie1.jpg" alt="Black Fury Hoodie">
-      <h3>Black Fury Hoodie</h3>
-      <p class="price"><span class="old-price">₹2,499</span> ₹1,799</p>
-    </div>
+  <!-- HERO -->
+  <section class="hero">
+    <h2 class="tagline">Exclusive Hoodie Collection 2025</h2>
+  </section>
 
-    <div class="product" onclick="location.href='hoodie2.html'">
-      <img src="hoodie2.jpg" alt="White Chaos Hoodie">
-      <h3>White Chaos Hoodie</h3>
-      <p class="price"><span class="old-price">₹2,299</span> ₹1,699</p>
-    </div>
+  <!-- PRODUCTS -->
+  <section class="product-section">
+    <h2 class="section-title">Featured Hoodies</h2>
+    <div class="product-grid">
 
-    <div class="product" onclick="location.href='hoodie3.html'">
-      <img src="hoodie3.jpg" alt="Urban Dawg Hoodie">
-      <h3>Urban Dawg Hoodie</h3>
-      <p class="price"><span class="old-price">₹2,799</span> ₹1,999</p>
-    </div>
+      <!-- Hoodie 1 -->
+      <div class="product">
+        <a href="hoodie1.html">
+          <img src="hoodie1.jpg" alt="Black Fairy Hoodie">
+        </a>
+        <h3>Black Fairy Hoodie</h3>
+        <p class="price">
+          <span class="old">₹2,499</span>
+          ₹1,799
+        </p>
+        <select class="size-select">
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+          <option value="XL">XL</option>
+        </select>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
 
-    <div class="product" onclick="location.href='hoodie4.html'">
-      <img src="hoodie4.jpg" alt="Street Rage Hoodie">
-      <h3>Street Rage Hoodie</h3>
-      <p class="price"><span class="old-price">₹2,599</span> ₹1,899</p>
-    </div>
+      <!-- Hoodie 2 -->
+      <div class="product">
+        <a href="hoodie2.html">
+          <img src="hoodie2.jpg" alt="Crimson Wolf Hoodie">
+        </a>
+        <h3>Crimson Wolf Hoodie</h3>
+        <p class="price">
+          <span class="old">₹2,799</span>
+          ₹1,999
+        </p>
+        <select class="size-select">
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+          <option value="XL">XL</option>
+        </select>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
 
-    <div class="product" onclick="location.href='hoodie5.html'">
-      <img src="hoodie5.jpg" alt="Crimson Beast Hoodie">
-      <h3>Crimson Beast Hoodie</h3>
-      <p class="price"><span class="old-price">₹2,299</span> ₹1,699</p>
-    </div>
+      <!-- Hoodie 3 -->
+      <div class="product">
+        <a href="hoodie3.html">
+          <img src="hoodie3.jpg" alt="Midnight Flame Hoodie">
+        </a>
+        <h3>Midnight Flame Hoodie</h3>
+        <p class="price">
+          <span class="old">₹2,599</span>
+          ₹1,899
+        </p>
+        <select class="size-select">
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+          <option value="XL">XL</option>
+        </select>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
 
-    <div class="product" onclick="location.href='hoodie6.html'">
-      <img src="hoodie6.jpg" alt="Phantom Red Hoodie">
-      <h3>Phantom Red Hoodie</h3>
-      <p class="price"><span class="old-price">₹2,499</span> ₹1,799</p>
-    </div>
+      <!-- Hoodie 4 -->
+      <div class="product">
+        <a href="hoodie4.html">
+          <img src="hoodie4.jpg" alt="Urban Rogue Hoodie">
+        </a>
+        <h3>Urban Rogue Hoodie</h3>
+        <p class="price">
+          <span class="old">₹2,699</span>
+          ₹1,899
+        </p>
+        <select class="size-select">
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+          <option value="XL">XL</option>
+        </select>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
 
-    <div class="product" onclick="location.href='hoodie7.html'">
-      <img src="hoodie7.jpg" alt="Midnight Wolf Hoodie">
-      <h3>Midnight Wolf Hoodie</h3>
-      <p class="price"><span class="old-price">₹2,699</span> ₹1,899</p>
     </div>
+  </section>
 
-    <div class="product" onclick="location.href='hoodie8.html'">
-      <img src="hoodie8.jpg" alt="Inferno Edge Hoodie">
-      <h3>Inferno Edge Hoodie</h3>
-      <p class="price"><span class="old-price">₹2,799</span> ₹1,999</p>
-    </div>
-  </main>
+  <!-- COMING SOON -->
+  <section class="coming-soon">
+    <h2>Coming Soon: T-Shirts Collection</h2>
+    <p>Stay tuned for our next streetwear drop — only at UNDERDAWGS.</p>
+  </section>
 
+  <!-- CART POPUP -->
   <div id="cart-popup" class="cart-popup">
     <div class="cart-content">
-      <span id="close-cart" class="close">&times;</span>
-      <h2>Your Cart</h2>
+      <h3>Your Cart</h3>
       <ul id="cart-items"></ul>
       <p id="cart-total">Total: ₹0</p>
+      <button id="checkout-btn">Checkout</button>
+      <button id="close-cart">Close</button>
+    </div>
+  </div>
+
+  <!-- CHECKOUT FORM -->
+  <div id="checkout-form" class="checkout-form">
+    <div class="form-content">
+      <h3>Checkout</h3>
+      <form>
+        <input type="text" placeholder="Full Name" required>
+        <input type="text" placeholder="Address" required>
+        <input type="email" placeholder="Email" required>
+        <input type="tel" placeholder="Phone Number" required>
+        <button type="submit">Place Order</button>
+      </form>
+      <button id="close-checkout">Close</button>
     </div>
   </div>
 
