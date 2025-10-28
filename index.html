@@ -8,71 +8,86 @@
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- ==== HEADER ==== -->
   <header class="navbar">
     <img src="logo.png" alt="UNDERDAWGS Logo" class="logo">
     <h1 class="brand">UNDERDAWGS</h1>
     <div class="cart-icon" id="cart-icon">🛒<span id="cart-count">0</span></div>
   </header>
 
+  <!-- ==== HERO ==== -->
   <section class="hero">
-    <h2>Born From The Hills<br>Built By The Peaks</h2>
+    <h2>Born, Underground, Born Everywhere</h2>
     <p>Exclusive Streetwear — Made For The Underdawgs</p>
   </section>
 
+  <!-- ==== HOODIE PRODUCTS ==== -->
   <section class="products">
     <h2>HOODIES</h2>
     <div class="hoodie-grid">
       <div class="hoodie-card">
         <img src="hoodie1.jpg" alt="Hoodie 1">
         <h3>Classic UNDERDAWGS Hoodie</h3>
-        <p>₹1999</p>
-        <button class="add-cart">Add to Cart</button>
+        <p><s>₹1500</s> ₹1200</p>
+        <button class="add-cart" onclick="addToCart('Classic UNDERDAWGS Hoodie', 1200)">Add to Cart</button>
       </div>
       <div class="hoodie-card">
         <img src="hoodie2.jpg" alt="Hoodie 2">
         <h3>Mountain Peak Hoodie</h3>
-        <p>₹1999</p>
-        <button class="add-cart">Add to Cart</button>
+        <p><s>₹1500</s> ₹1200</p>
+        <button class="add-cart" onclick="addToCart('Mountain Peak Hoodie', 1200)">Add to Cart</button>
       </div>
       <div class="hoodie-card">
         <img src="hoodie3.jpg" alt="Hoodie 3">
         <h3>Heritage Print Hoodie</h3>
-        <p>₹1999</p>
-        <button class="add-cart">Add to Cart</button>
+        <p><s>₹1500</s> ₹1200</p>
+        <button class="add-cart" onclick="addToCart('Heritage Print Hoodie', 1200)">Add to Cart</button>
       </div>
       <div class="hoodie-card">
         <img src="hoodie4.jpg" alt="Hoodie 4">
         <h3>Retro Graphic Hoodie</h3>
-        <p>₹1999</p>
-        <button class="add-cart">Add to Cart</button>
+        <p><s>₹1500</s> ₹1200</p>
+        <button class="add-cart" onclick="addToCart('Retro Graphic Hoodie', 1200)">Add to Cart</button>
       </div>
       <div class="hoodie-card">
         <img src="hoodie5.jpg" alt="Hoodie 5">
         <h3>Urban UNDERDAWGS Hoodie</h3>
-        <p>₹1999</p>
-        <button class="add-cart">Add to Cart</button>
+        <p><s>₹1500</s> ₹1200</p>
+        <button class="add-cart" onclick="addToCart('Urban UNDERDAWGS Hoodie', 1200)">Add to Cart</button>
       </div>
       <div class="hoodie-card">
         <img src="hoodie6.jpg" alt="Hoodie 6">
         <h3>Peak Legend Hoodie</h3>
-        <p>₹1999</p>
-        <button class="add-cart">Add to Cart</button>
+        <p><s>₹1500</s> ₹1200</p>
+        <button class="add-cart" onclick="addToCart('Peak Legend Hoodie', 1200)">Add to Cart</button>
       </div>
       <div class="hoodie-card">
         <img src="hoodie7.jpg" alt="Hoodie 7">
         <h3>Blackout Series Hoodie</h3>
-        <p>₹1999</p>
-        <button class="add-cart">Add to Cart</button>
+        <p><s>₹1500</s> ₹1200</p>
+        <button class="add-cart" onclick="addToCart('Blackout Series Hoodie', 1200)">Add to Cart</button>
       </div>
       <div class="hoodie-card">
         <img src="hoodie8.jpg" alt="Hoodie 8">
         <h3>OG UNDERDAWGS Hoodie</h3>
-        <p>₹1999</p>
-        <button class="add-cart">Add to Cart</button>
+        <p><s>₹1500</s> ₹1200</p>
+        <button class="add-cart" onclick="addToCart('OG UNDERDAWGS Hoodie', 1200)">Add to Cart</button>
       </div>
     </div>
   </section>
 
+  <!-- ==== CHECKOUT BUTTON ==== -->
+  <div style="text-align:center; margin:40px;">
+    <button class="add-cart" onclick="checkout()">Proceed to Checkout</button>
+  </div>
+
+  <!-- ==== COMING SOON ==== -->
+  <section class="hero" style="background:#111;">
+    <h2>COMING SOON</h2>
+    <p>T-SHIRTS COLLECTION DROPPING SOON 🔥</p>
+  </section>
+
+  <!-- ==== FOOTER ==== -->
   <footer>
     <p>© 2025 UNDERDAWGS | All Rights Reserved</p>
   </footer>
