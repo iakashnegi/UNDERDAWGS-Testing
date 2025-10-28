@@ -5,111 +5,117 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>UNDERDAWGS | Hoodies</title>
   <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
 <body>
-  <header>
-    <img src="logo.png" alt="UNDERDAWGS Logo" class="logo" />
-    <h1>UNDERDAWGS</h1>
-
-    <!-- Cart Button -->
-    <div class="cart-icon" onclick="toggleCart()">
-      🛒 <span id="cart-count">0</span>
+  <header class="navbar">
+    <div class="logo-container">
+      <img src="logo.png" alt="UNDERDAWGS Logo" class="logo" />
+      <h1 class="brand-name">UNDERDAWGS</h1>
+    </div>
+    <div class="cart-container">
+      <button class="cart-btn" id="cartBtn">
+        🛒<span id="cartCount">0</span>
+      </button>
     </div>
   </header>
 
-  <h2>Hoodies</h2>
+  <main>
+    <h2 class="section-title">Hoodies</h2>
 
-  <section class="products">
-    <!-- Each hoodie card -->
-    <div class="product-card">
-      <img src="hoodie1.jpg" alt="hoodie1" />
-      <h3>Classic UNDERDAWGS Hoodie</h3>
-      <p>₹1999</p>
-      <select id="size1">
-        <option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
-      </select>
-      <button onclick="addToCart('Classic UNDERDAWGS Hoodie', 1999, 'hoodie1.jpg', document.getElementById('size1').value)">Add to Cart</button>
+    <div class="hoodie-grid">
+      <!-- Hoodie Cards -->
+      <div class="hoodie-card">
+        <img src="hoodie1.jpg" alt="Classic UNDERDAWGS Hoodie">
+        <h3>Classic UNDERDAWGS Hoodie</h3>
+        <p class="price">₹1999</p>
+        <select class="size-select">
+          <option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
+        </select>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="hoodie-card">
+        <img src="hoodie2.jpg" alt="Street Legend Hoodie">
+        <h3>Street Legend Hoodie</h3>
+        <p class="price">₹1999</p>
+        <select class="size-select">
+          <option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
+        </select>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="hoodie-card">
+        <img src="hoodie3.jpg" alt="Urban Alpha Hoodie">
+        <h3>Urban Alpha Hoodie</h3>
+        <p class="price">₹1999</p>
+        <select class="size-select">
+          <option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
+        </select>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="hoodie-card">
+        <img src="hoodie4.jpg" alt="Born To Grind Hoodie">
+        <h3>Born To Grind Hoodie</h3>
+        <p class="price">₹1999</p>
+        <select class="size-select">
+          <option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
+        </select>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="hoodie-card">
+        <img src="hoodie5.jpg" alt="Hill Hustler Hoodie">
+        <h3>Hill Hustler Hoodie</h3>
+        <p class="price">₹1999</p>
+        <select class="size-select">
+          <option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
+        </select>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="hoodie-card">
+        <img src="hoodie6.jpg" alt="Peak Vibes Hoodie">
+        <h3>Peak Vibes Hoodie</h3>
+        <p class="price">₹1999</p>
+        <select class="size-select">
+          <option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
+        </select>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="hoodie-card">
+        <img src="hoodie7.jpg" alt="Mountain Code Hoodie">
+        <h3>Mountain Code Hoodie</h3>
+        <p class="price">₹1999</p>
+        <select class="size-select">
+          <option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
+        </select>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="hoodie-card">
+        <img src="hoodie8.jpg" alt="Vintage Trail Hoodie">
+        <h3>Vintage Trail Hoodie</h3>
+        <p class="price">₹1999</p>
+        <select class="size-select">
+          <option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
+        </select>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
     </div>
+  </main>
 
-    <div class="product-card">
-      <img src="hoodie2.jpg" alt="hoodie2" />
-      <h3>Street Legend Hoodie</h3>
-      <p>₹1999</p>
-      <select id="size2">
-        <option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
-      </select>
-      <button onclick="addToCart('Street Legend Hoodie', 1999, 'hoodie2.jpg', document.getElementById('size2').value)">Add to Cart</button>
+  <!-- Cart Modal -->
+  <div id="cartModal" class="cart-modal">
+    <div class="cart-content">
+      <h2>Your Cart</h2>
+      <ul id="cartItems"></ul>
+      <p id="totalPrice">Total: ₹0</p>
+      <button id="checkoutBtn">Checkout</button>
+      <button id="closeCart">Close</button>
     </div>
-
-    <div class="product-card">
-      <img src="hoodie3.jpg" alt="hoodie3" />
-      <h3>Urban Alpha Hoodie</h3>
-      <p>₹1899</p>
-      <select id="size3">
-        <option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
-      </select>
-      <button onclick="addToCart('Urban Alpha Hoodie', 1899, 'hoodie3.jpg', document.getElementById('size3').value)">Add to Cart</button>
-    </div>
-
-    <div class="product-card">
-      <img src="hoodie4.jpg" alt="hoodie4" />
-      <h3>Born To Grind Hoodie</h3>
-      <p>₹1999</p>
-      <select id="size4">
-        <option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
-      </select>
-      <button onclick="addToCart('Born To Grind Hoodie', 1999, 'hoodie4.jpg', document.getElementById('size4').value)">Add to Cart</button>
-    </div>
-
-    <div class="product-card">
-      <img src="hoodie5.jpg" alt="hoodie5" />
-      <h3>Alpha Wolf Hoodie</h3>
-      <p>₹1899</p>
-      <select id="size5">
-        <option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
-      </select>
-      <button onclick="addToCart('Alpha Wolf Hoodie', 1899, 'hoodie5.jpg', document.getElementById('size5').value)">Add to Cart</button>
-    </div>
-
-    <div class="product-card">
-      <img src="hoodie6.jpg" alt="hoodie6" />
-      <h3>Mountain Spirit Hoodie</h3>
-      <p>₹1999</p>
-      <select id="size6">
-        <option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
-      </select>
-      <button onclick="addToCart('Mountain Spirit Hoodie', 1999, 'hoodie6.jpg', document.getElementById('size6').value)">Add to Cart</button>
-    </div>
-
-    <div class="product-card">
-      <img src="hoodie7.jpg" alt="hoodie7" />
-      <h3>Grind Mode Hoodie</h3>
-      <p>₹1999</p>
-      <select id="size7">
-        <option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
-      </select>
-      <button onclick="addToCart('Grind Mode Hoodie', 1999, 'hoodie7.jpg', document.getElementById('size7').value)">Add to Cart</button>
-    </div>
-
-    <div class="product-card">
-      <img src="hoodie8.jpg" alt="hoodie8" />
-      <h3>Dark Peak Hoodie</h3>
-      <p>₹1999</p>
-      <select id="size8">
-        <option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
-      </select>
-      <button onclick="addToCart('Dark Peak Hoodie', 1999, 'hoodie8.jpg', document.getElementById('size8').value)">Add to Cart</button>
-    </div>
-  </section>
-
-  <!-- Cart Section -->
-  <div id="cart" class="cart">
-    <h3>Your Cart</h3>
-    <ul id="cart-items"></ul>
-    <p id="total">Total: ₹0</p>
-    <button onclick="checkout()">Checkout</button>
   </div>
-
-  <script src="script.js"></script>
 </body>
 </html>
