@@ -1,40 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Red Alpha Hoodie - UNDERDAWGS</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="header">
-    <div class="logo-section">
-      <img src="logo.png" class="logo">
-      <div class="brand-text">
-        <h1 class="brand-name">UNDERDAWGS</h1>
-        <p class="tagline-small">Born Underground. Born Everywhere.</p>
-      </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo" onclick="location.href='index.html'">
+      <img src="logo.png" alt="UNDERDAWGS Logo">
+      <h1>UNDERDAWGS</h1>
     </div>
-    <a href="index.html" class="cart-btn">⬅ Back to Shop</a>
+    <button id="cart-btn">🛒 Cart (<span id="cart-count">0</span>)</button>
   </header>
 
-  <section class="product-detail">
-    <div class="product-detail-container">
-      <img src="hoodie2.jpg" alt="Red Alpha Hoodie" class="product-detail-img">
-      <div class="product-detail-info">
-        <h2>Red Alpha Hoodie</h2>
-        <p class="price"><span class="old">₹2599</span> ₹1899</p>
-        <p class="description">
-          Dominate the streets with the Red Alpha Hoodie — a symbol of power and movement. Featuring premium cotton blend and a fierce red tone, this hoodie embodies the UNDERDAWGS attitude.
-        </p>
-        <label>Select Size:</label>
-        <select class="size-select">
-          <option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
-        </select>
-        <button class="add-to-cart">Add to Cart</button>
-      </div>
+  <!-- PRODUCT DETAILS -->
+  <main class="product-page">
+    <img src="hoodie2.jpg" alt="Red Alpha Hoodie" class="product-img-large">
+
+    <div class="product-details">
+      <h2>Red Alpha Hoodie</h2>
+      <p class="price"><span class="old-price">₹2,599</span> ₹1,899</p>
+      <p class="description">
+        The <b>Red Alpha Hoodie</b> defines dominance and confidence. Its striking red shade with UNDERDAWGS detailing makes you stand out from the crowd. 
+        Crafted with soft fleece, it’s built to keep you warm and unstoppable.
+      </p>
+
+      <label for="size">Size:</label>
+      <select id="size">
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+      </select>
+
+      <button onclick="addToCart('Red Alpha Hoodie', 1899, document.getElementById('size').value)">Add to Cart</button>
     </div>
-  </section>
+  </main>
+
+  <!-- CART POPUP -->
+  <div id="cart-popup" class="cart-popup">
+    <div class="cart-content">
+      <span id="close-cart" class="close">&times;</span>
+      <h2>Your Cart</h2>
+      <ul id="cart-items"></ul>
+      <p id="cart-total">Total: ₹0</p>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
