@@ -1,89 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UNDERDAWGS</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UNDERDAWGS | Hoodies</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
+
   <!-- HEADER -->
   <header class="header">
-    <div class="logo-section">
-      <img src="images/logo.png" alt="UNDERDAWGS Logo" class="logo" />
-      <h1 class="brand">UNDERDAWGS</h1>
-    </div>
-    <div class="cart">
-      <span class="cart-icon">🛒</span>
-      <span id="cart-count">0</span>
-    </div>
+    <img src="images/logo.png" alt="UNDERDAWGS Logo" class="logo">
+    <h1 class="brand-name">UNDERDAWGS</h1>
   </header>
 
-  <!-- MAIN SECTION -->
+  <!-- MAIN -->
   <main>
-    <section class="collection">
-      <h2>HOODIES</h2>
-      <div class="product-grid">
-        <!-- Example hoodie cards -->
+    <section class="products-section">
+      <h2 class="section-title">HOODIES</h2>
+      <div class="products-grid">
+
         <div class="product-card">
-          <img src="images/hoodie1.jpg" alt="Hoodie 1" />
+          <img src="images/hoodie1.jpg" alt="Classic UNDERDAWGS Hoodie">
           <h3>Classic UNDERDAWGS Hoodie</h3>
           <p class="price">₹1999</p>
-          <button class="add-to-cart" data-name="Classic UNDERDAWGS Hoodie" data-price="1999">Add to Cart</button>
+          <button onclick="addToCart('Classic UNDERDAWGS Hoodie', 1999)">Add to Cart</button>
         </div>
+
         <div class="product-card">
-          <img src="images/hoodie2.jpg" alt="Hoodie 2" />
+          <img src="images/hoodie2.jpg" alt="Mountain Spirit Hoodie">
           <h3>Mountain Spirit Hoodie</h3>
           <p class="price">₹1899</p>
-          <button class="add-to-cart" data-name="Mountain Spirit Hoodie" data-price="1899">Add to Cart</button>
+          <button onclick="addToCart('Mountain Spirit Hoodie', 1899)">Add to Cart</button>
         </div>
+
         <div class="product-card">
-          <img src="images/hoodie3.jpg" alt="Hoodie 3" />
+          <img src="images/hoodie3.jpg" alt="Born from the Hills Hoodie">
           <h3>Born from the Hills Hoodie</h3>
           <p class="price">₹1799</p>
-          <button class="add-to-cart" data-name="Born from the Hills Hoodie" data-price="1799">Add to Cart</button>
+          <button onclick="addToCart('Born from the Hills Hoodie', 1799)">Add to Cart</button>
         </div>
+
         <div class="product-card">
-          <img src="images/hoodie4.jpg" alt="Hoodie 4" />
+          <img src="images/hoodie4.jpg" alt="Peaks Edition Hoodie">
           <h3>Peaks Edition Hoodie</h3>
           <p class="price">₹2099</p>
-          <button class="add-to-cart" data-name="Peaks Edition Hoodie" data-price="2099">Add to Cart</button>
+          <button onclick="addToCart('Peaks Edition Hoodie', 2099)">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+          <img src="images/hoodie5.jpg" alt="Red Dawn Hoodie">
+          <h3>Red Dawn Hoodie</h3>
+          <p class="price">₹1999</p>
+          <button onclick="addToCart('Red Dawn Hoodie', 1999)">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+          <img src="images/hoodie6.jpg" alt="Night Howler Hoodie">
+          <h3>Night Howler Hoodie</h3>
+          <p class="price">₹2199</p>
+          <button onclick="addToCart('Night Howler Hoodie', 2199)">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+          <img src="images/hoodie7.jpg" alt="Urban Dawg Hoodie">
+          <h3>Urban Dawg Hoodie</h3>
+          <p class="price">₹1999</p>
+          <button onclick="addToCart('Urban Dawg Hoodie', 1999)">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+          <img src="images/hoodie8.jpg" alt="Street Alpha Hoodie">
+          <h3>Street Alpha Hoodie</h3>
+          <p class="price">₹2299</p>
+          <button onclick="addToCart('Street Alpha Hoodie', 2299)">Add to Cart</button>
         </div>
       </div>
     </section>
 
-    <!-- COMING SOON SECTION -->
     <section class="coming-soon">
       <h2>T-SHIRTS (COMING SOON)</h2>
     </section>
+
+    <!-- CHECKOUT FORM -->
+    <section class="checkout-section">
+      <h2>Checkout</h2>
+      <form action="https://formspree.io/f/movpedod" method="POST" id="checkout-form">
+        <input type="text" name="product" id="productName" placeholder="Product Name" required readonly>
+        <input type="number" name="price" id="productPrice" placeholder="Price" required readonly>
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <textarea name="address" placeholder="Address" required></textarea>
+        <button type="submit">Place Order</button>
+      </form>
+    </section>
   </main>
 
-  <!-- CHECKOUT MODAL -->
-  <div id="checkout-modal" class="hidden modal">
-    <div class="modal-content">
-      <h2>Checkout</h2>
-      <form id="checkout-form">
-        <label>Product Name</label>
-        <input type="text" id="product-name" name="product" readonly />
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 UNDERDAWGS. All Rights Reserved.</p>
+  </footer>
 
-        <label>Price</label>
-        <input type="text" id="product-price" name="price" readonly />
-
-        <label>Your Name</label>
-        <input type="text" name="name" required />
-
-        <label>Email</label>
-        <input type="email" name="email" required />
-
-        <label>Address</label>
-        <textarea name="address" required></textarea>
-
-        <button type="submit" class="place-order">Place Order</button>
-        <button type="button" id="cancel-order" class="cancel">Cancel</button>
-      </form>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
 </body>
 </html>
