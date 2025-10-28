@@ -1,5 +1,4 @@
-/* UNDERDAWGS Final Style - Black & Red Theme */
-
+/* === GLOBAL STYLES === */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -7,123 +6,171 @@ body {
   color: #fff;
 }
 
+/* === HEADER === */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 15px 25px;
   background-color: #111;
-  padding: 10px 20px;
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
-.logo-container {
+.logo-section {
   display: flex;
   align-items: center;
+  gap: 10px;
 }
 
 .logo {
-  width: 45px;
-  height: 45px;
-  margin-right: 10px;
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
 }
 
-h1 {
-  color: red;
+header h1 {
   font-size: 1.8rem;
+  color: #e50914;
+  margin: 0;
   letter-spacing: 2px;
 }
 
-.cart-btn {
-  background-color: red;
+#cart-btn {
+  background-color: #e50914;
+  color: white;
   border: none;
-  color: #fff;
-  font-size: 1.2rem;
-  padding: 8px 15px;
-  border-radius: 8px;
+  padding: 10px 18px;
+  font-weight: bold;
   cursor: pointer;
-  transition: 0.3s;
+  border-radius: 8px;
+  transition: 0.3s ease;
 }
 
-.cart-btn:hover {
-  background-color: #b30000;
+#cart-btn:hover {
+  background-color: #b2060f;
 }
 
-main {
-  padding: 20px;
-}
-
-/* Hoodie Grid Section */
-.hoodie-section h2 {
-  color: red;
+/* === SECTION TITLES === */
+h2 {
   text-align: center;
-  margin-bottom: 15px;
+  color: #e50914;
+  margin: 30px 0 15px 0;
+  letter-spacing: 1px;
 }
 
+/* === HOODIES GRID === */
 .hoodie-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
+  gap: 18px;
+  padding: 0 15px 40px 15px;
 }
 
 .hoodie {
   background-color: #111;
-  border-radius: 10px;
-  padding: 15px;
+  border: 1px solid #e50914;
+  border-radius: 12px;
   text-align: center;
-  box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
+  padding: 12px;
+  transition: 0.3s ease;
+}
+
+.hoodie:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 12px #e50914;
 }
 
 .hoodie img {
   width: 100%;
   height: 200px;
-  object-fit: cover;
   border-radius: 8px;
+  object-fit: cover;
+  margin-bottom: 10px;
 }
 
 .hoodie h3 {
-  margin: 10px 0 5px;
   font-size: 1rem;
+  margin: 6px 0;
+  color: #fff;
 }
 
 .hoodie p {
-  color: red;
-  font-weight: bold;
-  margin-bottom: 10px;
+  font-size: 0.95rem;
+  margin: 5px 0;
+  color: #ccc;
+}
+
+.hoodie .old {
+  text-decoration: line-through;
+  color: gray;
+  margin-right: 5px;
 }
 
 .hoodie select {
-  padding: 5px;
-  border-radius: 5px;
+  width: 100%;
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid #e50914;
+  background-color: #000;
+  color: #fff;
   margin-bottom: 10px;
-  border: 1px solid red;
-  background: #000;
-  color: white;
+  cursor: pointer;
 }
 
 .add-cart {
-  background-color: red;
-  border: none;
-  padding: 8px 15px;
-  border-radius: 5px;
+  background-color: #e50914;
   color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 10px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.3s ease;
+  width: 100%;
+  font-weight: bold;
 }
 
 .add-cart:hover {
-  background-color: #b30000;
+  background-color: #b2060f;
 }
 
-/* Cart Modal */
-.cart-modal {
+/* === COMING SOON === */
+.coming-soon {
+  background-color: #111;
+  padding: 40px 20px;
+  text-align: center;
+  border-top: 2px solid #e50914;
+}
+
+.coming-soon p {
+  color: #bbb;
+  margin-bottom: 20px;
+}
+
+#notify-btn {
+  background-color: #e50914;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+#notify-btn:hover {
+  background-color: #b2060f;
+}
+
+/* === CART MODAL === */
+#cart-modal {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -135,184 +182,136 @@ main {
 
 .cart-content {
   background-color: #111;
-  padding: 25px;
-  border-radius: 10px;
+  border: 2px solid #e50914;
+  border-radius: 12px;
+  padding: 20px;
   width: 90%;
   max-width: 400px;
   text-align: center;
-  box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+}
+
+.cart-content h2 {
+  margin-top: 0;
+  color: #e50914;
 }
 
 #cart-items {
   list-style: none;
   padding: 0;
-  margin-bottom: 10px;
-  max-height: 200px;
-  overflow-y: auto;
+  margin: 10px 0;
 }
 
 #cart-items li {
+  border-bottom: 1px solid #333;
+  padding: 8px 0;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 8px;
-  border-bottom: 1px solid #333;
-  padding-bottom: 5px;
+  align-items: center;
+  color: #ddd;
 }
 
-#cart-items button {
+.remove-btn {
   background: none;
+  color: #e50914;
   border: none;
-  color: red;
+  font-weight: bold;
   cursor: pointer;
 }
 
 #cart-total {
-  margin-top: 10px;
+  margin: 12px 0;
   font-weight: bold;
+  color: #fff;
 }
 
 #checkout-btn, #close-cart {
-  background-color: red;
+  background-color: #e50914;
+  color: #fff;
   border: none;
-  padding: 8px 15px;
-  border-radius: 5px;
-  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
   cursor: pointer;
   margin: 5px;
+  transition: 0.3s ease;
 }
 
 #checkout-btn:hover, #close-cart:hover {
-  background-color: #b30000;
+  background-color: #b2060f;
 }
 
-/* Checkout Form */
-.checkout {
+/* === NOTIFY MODAL === */
+#notify-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.notify-content {
   background-color: #111;
+  border: 2px solid #e50914;
+  border-radius: 12px;
   padding: 25px;
-  border-radius: 10px;
+  text-align: center;
   width: 90%;
   max-width: 400px;
-  margin: 40px auto;
-  box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
 }
 
-.checkout h2 {
-  color: red;
-  text-align: center;
+.notify-content h2 {
+  color: #e50914;
+  margin-bottom: 15px;
 }
 
-.checkout form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.checkout input {
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid red;
-  background-color: #000;
-  color: white;
-}
-
-.checkout button {
-  background-color: red;
-  border: none;
-  padding: 10px;
-  border-radius: 5px;
-  color: white;
-  cursor: pointer;
-  margin-top: 5px;
-}
-
-/* Coming Soon Section */
-.coming-soon {
-  text-align: center;
-  padding: 40px 10px;
-  background-color: #000;
-  margin-top: 40px;
-}
-
-.coming-soon h2 {
-  color: red;
-  font-size: 1.5rem;
-  text-shadow: 0 0 10px red, 0 0 20px red;
-  animation: glow 1.5s infinite alternate;
-}
-
-@keyframes glow {
-  from { text-shadow: 0 0 5px red; }
-  to { text-shadow: 0 0 20px red; }
-}
-
-.coming-soon button {
-  background-color: red;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  color: white;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.coming-soon button:hover {
-  background-color: #b30000;
-}
-
-/* Notify Me Popup */
-.notify {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #111;
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
-  text-align: center;
-}
-
-.notify input {
+.notify-content input {
+  width: 80%;
   padding: 8px;
   margin-bottom: 10px;
-  width: 80%;
-  border-radius: 5px;
-  border: 1px solid red;
-  background: #000;
+  border-radius: 8px;
+  border: 1px solid #e50914;
+  background-color: #000;
   color: white;
 }
 
-.notify button {
-  background-color: red;
+.notify-content button {
+  background-color: #e50914;
+  color: #fff;
   border: none;
+  border-radius: 8px;
   padding: 8px 15px;
-  border-radius: 5px;
-  color: white;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
-.notify button:hover {
-  background-color: #b30000;
+.notify-content button:hover {
+  background-color: #b2060f;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.3rem;
+  }
+
+  .logo {
+    width: 45px;
+    height: 45px;
+  }
+
   .hoodie-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    gap: 12px;
   }
 
   .hoodie img {
-    height: 160px;
+    height: 140px;
   }
 
-  h1 {
-    font-size: 1.5rem;
-  }
-
-  .cart-btn {
-    font-size: 1rem;
-    padding: 6px 12px;
+  #cart-btn {
+    padding: 8px 14px;
   }
 }
