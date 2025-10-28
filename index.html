@@ -1,136 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UNDERDAWGS | Born Underground. Worn Everywhere.</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UNDERDAWGS | Printed Hoodies</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <!-- Header -->
-  <header class="header">
-    <div class="logo-container">
-      <img src="logo.png" alt="UNDERDAWGS Logo" class="logo" />
+  <header>
+    <div class="logo-section">
+      <img src="logo.png" alt="UNDERDAWGS Logo" class="logo">
       <div class="brand-text">
         <h1>UNDERDAWGS</h1>
         <p class="tagline">Born Underground. Worn Everywhere.</p>
       </div>
     </div>
-    <button id="cart-btn" class="cart-btn">🛒 Cart</button>
+    <button id="cart-button">
+      <span>Cart</span>
+      <span id="cart-count">0</span>
+    </button>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <h2>Premium Printed Hoodies</h2>
-    <p>Bold • Fierce • Street-Ready</p>
-  </section>
+  <main>
+    <section class="intro">
+      <h2>Premium Printed Hoodies</h2>
+      <p>Bold · Fierce · Street-Ready</p>
+    </section>
 
-  <!-- Hoodie Section -->
-  <section id="hoodies" class="products">
-    <h2>Hoodie Collection</h2>
-    <div class="product-grid">
-      <div class="product">
-        <img src="hoodie1.jpg" alt="Hoodie 1" />
-        <h3>Classic Dawg Hoodie</h3>
-        <p>₹1499</p>
-        <select id="size-Classic Dawg Hoodie">
-          <option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
-        </select>
-        <button onclick="addToCart('Classic Dawg Hoodie', 1499)">Add to Cart</button>
+    <section class="products">
+      <h2>Hoodie Collection</h2>
+      <div class="product-grid">
+        <!-- Product 1 -->
+        <div class="product">
+          <img src="hoodie1.jpg" alt="Classic Dawg Hoodie">
+          <h3>Classic Dawg Hoodie</h3>
+          <p class="price"><span class="old-price">₹1500</span> ₹1200</p>
+          <label>Size:</label>
+          <select>
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+            <option>XL</option>
+            <option>XXL</option>
+          </select>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product">
+          <img src="hoodie2.jpg" alt="Street Alpha Hoodie">
+          <h3>Street Alpha Hoodie</h3>
+          <p class="price"><span class="old-price">₹1600</span> ₹1299</p>
+          <label>Size:</label>
+          <select>
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+            <option>XL</option>
+            <option>XXL</option>
+          </select>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <!-- Add your hoodie3 to hoodie8 here the same way -->
       </div>
+    </section>
 
-      <div class="product">
-        <img src="hoodie2.jpg" alt="Hoodie 2" />
-        <h3>Street Alpha Hoodie</h3>
-        <p>₹1599</p>
-        <select id="size-Street Alpha Hoodie">
-          <option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
-        </select>
-        <button onclick="addToCart('Street Alpha Hoodie', 1599)">Add to Cart</button>
-      </div>
-
-      <div class="product">
-        <img src="hoodie3.jpg" alt="Hoodie 3" />
-        <h3>Red Legacy Hoodie</h3>
-        <p>₹1699</p>
-        <select id="size-Red Legacy Hoodie">
-          <option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
-        </select>
-        <button onclick="addToCart('Red Legacy Hoodie', 1699)">Add to Cart</button>
-      </div>
-
-      <div class="product">
-        <img src="hoodie4.jpg" alt="Hoodie 4" />
-        <h3>Beast Mode Hoodie</h3>
-        <p>₹1799</p>
-        <select id="size-Beast Mode Hoodie">
-          <option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
-        </select>
-        <button onclick="addToCart('Beast Mode Hoodie', 1799)">Add to Cart</button>
-      </div>
-
-      <div class="product">
-        <img src="hoodie5.jpg" alt="Hoodie 5" />
-        <h3>Shadow Print Hoodie</h3>
-        <p>₹1499</p>
-        <select id="size-Shadow Print Hoodie">
-          <option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
-        </select>
-        <button onclick="addToCart('Shadow Print Hoodie', 1499)">Add to Cart</button>
-      </div>
-
-      <div class="product">
-        <img src="hoodie6.jpg" alt="Hoodie 6" />
-        <h3>Rebel Black Hoodie</h3>
-        <p>₹1599</p>
-        <select id="size-Rebel Black Hoodie">
-          <option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
-        </select>
-        <button onclick="addToCart('Rebel Black Hoodie', 1599)">Add to Cart</button>
-      </div>
-
-      <div class="product">
-        <img src="hoodie7.jpg" alt="Hoodie 7" />
-        <h3>Urban Dawg Hoodie</h3>
-        <p>₹1699</p>
-        <select id="size-Urban Dawg Hoodie">
-          <option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
-        </select>
-        <button onclick="addToCart('Urban Dawg Hoodie', 1699)">Add to Cart</button>
-      </div>
-
-      <div class="product">
-        <img src="hoodie8.jpg" alt="Hoodie 8" />
-        <h3>Alpha Red Hoodie</h3>
-        <p>₹1799</p>
-        <select id="size-Alpha Red Hoodie">
-          <option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
-        </select>
-        <button onclick="addToCart('Alpha Red Hoodie', 1799)">Add to Cart</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- T-Shirts Coming Soon -->
-  <section class="coming-soon">
-    <h2>T-Shirts Coming Soon 👕</h2>
-    <p>Stay tuned for our bold and fresh collection.</p>
-  </section>
+    <section class="coming-soon">
+      <h2>T-Shirts Coming Soon 🔥</h2>
+      <p>Get ready for bold new drops. Stay tuned!</p>
+    </section>
+  </main>
 
   <!-- Cart Popup -->
-  <div id="cart-popup" class="cart-popup">
-    <div class="cart-header">
+  <div id="cart-popup" class="hidden">
+    <div class="cart-content">
       <h2>Your Cart</h2>
-      <button id="close-cart" class="close-cart">&times;</button>
+      <div id="cart-items"></div>
+      <p id="cart-total">Total: ₹0</p>
+      <button id="checkout-btn">Proceed to Checkout</button>
+      <button id="close-cart">Close</button>
     </div>
-    <div id="cart-items" class="cart-items">
-      <p style="text-align:center; color:#aaa;">Your cart is empty</p>
-    </div>
-    <div class="cart-footer">
-      <h3>Total: <span id="total-price">₹0</span></h3>
-      <button id="checkout-btn" class="checkout-btn">Proceed to Checkout</button>
-    </div>
+  </div>
+
+  <!-- Checkout Form -->
+  <div id="checkout-form" class="hidden">
+    <form id="order-form" action="https://formspree.io/f/movpedod" method="POST">
+      <h2>Checkout</h2>
+      <label>Name:</label>
+      <input type="text" name="name" required>
+      <label>Email:</label>
+      <input type="email" name="email" required>
+      <label>Address:</label>
+      <textarea name="address" required></textarea>
+      <label>Mobile:</label>
+      <input type="tel" name="phone" required>
+      <input type="hidden" name="cart_details" id="cart-details-field">
+      <button type="submit">Place Order</button>
+      <button type="button" id="close-form">Cancel</button>
+    </form>
   </div>
 
   <script src="script.js"></script>
