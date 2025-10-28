@@ -3,129 +3,114 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UNDERDAWGS | Bold Hoodies for the Fearless</title>
+  <title>UNDERDAWGS | Hoodies Collection</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
 </head>
 <body>
   <header>
-    <div class="logo-container">
-      <img src="logo.png" alt="UNDERDAWGS Logo" class="logo" />
+    <div style="display:flex;align-items:center;">
+      <img src="logo.png" alt="UNDERDAWGS Logo">
       <div class="brand-text">
         <h1>UNDERDAWGS</h1>
         <p>Born Underground. Born Everywhere.</p>
       </div>
     </div>
-    <div class="cart-container">
-      <a href="#" class="cart-button">🛒 Cart (<span id="cart-count">0</span>)</a>
-    </div>
+    <button class="cart-btn">🛒 Cart (0)</button>
   </header>
 
-  <main>
-    <section class="hero">
-      <h2>🔥 Bold Hoodies for the Fearless</h2>
-    </section>
+  <section class="hero">
+    🔥 Bold Hoodies for the Fearless
+  </section>
 
-    <section class="collection">
-      <h2>EXCLUSIVE HOODIES COLLECTION</h2>
+  <h2 class="section-title">EXCLUSIVE HOODIES COLLECTION</h2>
 
-      <div class="product-grid">
+  <section class="product-grid">
 
-        <!-- Hoodie 1 -->
-        <div class="product-card">
-          <a href="hoodie1.html">
-            <img src="hoodie1.jpg" alt="Black Fury Hoodie" />
-            <h3>Black Fury Hoodie</h3>
-          </a>
-          <p class="price">
-            <span class="old-price">₹2499</span> <span class="new-price">₹1799</span>
-          </p>
-        </div>
-
-        <!-- Hoodie 2 -->
-        <div class="product-card">
-          <a href="hoodie2.html">
-            <img src="hoodie2.jpg" alt="Red Alpha Hoodie" />
-            <h3>Red Alpha Hoodie</h3>
-          </a>
-          <p class="price">
-            <span class="old-price">₹2299</span> <span class="new-price">₹1899</span>
-          </p>
-        </div>
-
-        <!-- Hoodie 3 -->
-        <div class="product-card">
-          <a href="hoodie3.html">
-            <img src="hoodie3.jpg" alt="Urban Shadow Hoodie" />
-            <h3>Urban Shadow Hoodie</h3>
-          </a>
-          <p class="price">
-            <span class="old-price">₹2499</span> <span class="new-price">₹1999</span>
-          </p>
-        </div>
-
-        <!-- Hoodie 4 -->
-        <div class="product-card">
-          <a href="hoodie4.html">
-            <img src="hoodie4.jpg" alt="Street Rebel Hoodie" />
-            <h3>Street Rebel Hoodie</h3>
-          </a>
-          <p class="price">
-            <span class="old-price">₹2199</span> <span class="new-price">₹1699</span>
-          </p>
-        </div>
-
-        <!-- Hoodie 5 -->
-        <div class="product-card">
-          <a href="hoodie5.html">
-            <img src="hoodie5.jpg" alt="Night Howler Hoodie" />
-            <h3>Night Howler Hoodie</h3>
-          </a>
-          <p class="price">
-            <span class="old-price">₹2399</span> <span class="new-price">₹1899</span>
-          </p>
-        </div>
-
-        <!-- Hoodie 6 -->
-        <div class="product-card">
-          <a href="hoodie6.html">
-            <img src="hoodie6.jpg" alt="Mountain Spirit Hoodie" />
-            <h3>Mountain Spirit Hoodie</h3>
-          </a>
-          <p class="price">
-            <span class="old-price">₹2299</span> <span class="new-price">₹1799</span>
-          </p>
-        </div>
-
-        <!-- Hoodie 7 -->
-        <div class="product-card">
-          <a href="hoodie7.html">
-            <img src="hoodie7.jpg" alt="Rogue Alpha Hoodie" />
-            <h3>Rogue Alpha Hoodie</h3>
-          </a>
-          <p class="price">
-            <span class="old-price">₹2499</span> <span class="new-price">₹1999</span>
-          </p>
-        </div>
-
-        <!-- Hoodie 8 -->
-        <div class="product-card">
-          <a href="hoodie8.html">
-            <img src="hoodie8.jpg" alt="Lone Wolf Hoodie" />
-            <h3>Lone Wolf Hoodie</h3>
-          </a>
-          <p class="price">
-            <span class="old-price">₹2399</span> <span class="new-price">₹1799</span>
-          </p>
-        </div>
-
+    <!-- Hoodie 1 -->
+    <div class="product-card" onclick="location.href='product1.html'">
+      <img src="hoodie1.jpg" alt="Black Fury Hoodie">
+      <h3>Black Fury Hoodie</h3>
+      <div class="price">
+        <span class="old-price">₹2499</span>
+        <span class="new-price">₹1799</span>
       </div>
-    </section>
-  </main>
+    </div>
+
+    <!-- Hoodie 2 -->
+    <div class="product-card" onclick="location.href='product2.html'">
+      <img src="hoodie2.jpg" alt="Red Alpha Hoodie">
+      <h3>Red Alpha Hoodie</h3>
+      <div class="price">
+        <span class="old-price">₹2599</span>
+        <span class="new-price">₹1899</span>
+      </div>
+    </div>
+
+    <!-- Hoodie 3 -->
+    <div class="product-card" onclick="location.href='product3.html'">
+      <img src="hoodie3.jpg" alt="Urban Shadow Hoodie">
+      <h3>Urban Shadow Hoodie</h3>
+      <div class="price">
+        <span class="old-price">₹2799</span>
+        <span class="new-price">₹1999</span>
+      </div>
+    </div>
+
+    <!-- Hoodie 4 -->
+    <div class="product-card" onclick="location.href='product4.html'">
+      <img src="hoodie4.jpg" alt="Street Rebel Hoodie">
+      <h3>Street Rebel Hoodie</h3>
+      <div class="price">
+        <span class="old-price">₹2199</span>
+        <span class="new-price">₹1699</span>
+      </div>
+    </div>
+
+    <!-- Hoodie 5 -->
+    <div class="product-card" onclick="location.href='product5.html'">
+      <img src="hoodie5.jpg" alt="Night Drift Hoodie">
+      <h3>Night Drift Hoodie</h3>
+      <div class="price">
+        <span class="old-price">₹2399</span>
+        <span class="new-price">₹1799</span>
+      </div>
+    </div>
+
+    <!-- Hoodie 6 -->
+    <div class="product-card" onclick="location.href='product6.html'">
+      <img src="hoodie6.jpg" alt="Wildcore Hoodie">
+      <h3>Wildcore Hoodie</h3>
+      <div class="price">
+        <span class="old-price">₹2499</span>
+        <span class="new-price">₹1899</span>
+      </div>
+    </div>
+
+    <!-- Hoodie 7 -->
+    <div class="product-card" onclick="location.href='product7.html'">
+      <img src="hoodie7.jpg" alt="Underfire Hoodie">
+      <h3>Underfire Hoodie</h3>
+      <div class="price">
+        <span class="old-price">₹2299</span>
+        <span class="new-price">₹1799</span>
+      </div>
+    </div>
+
+    <!-- Hoodie 8 -->
+    <div class="product-card" onclick="location.href='product8.html'">
+      <img src="hoodie8.jpg" alt="Dawg Instinct Hoodie">
+      <h3>Dawg Instinct Hoodie</h3>
+      <div class="price">
+        <span class="old-price">₹2499</span>
+        <span class="new-price">₹1899</span>
+      </div>
+    </div>
+
+  </section>
 
   <footer>
-    <p>© 2025 UNDERDAWGS. All rights reserved.</p>
+    © 2025 UNDERDAWGS. All Rights Reserved.
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
