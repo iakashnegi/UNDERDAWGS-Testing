@@ -1,61 +1,84 @@
-const cartBtn = document.getElementById("cart-btn");
-const cartPopup = document.getElementById("cart-popup");
-const closeCart = document.getElementById("close-cart");
-const checkoutBtn = document.getElementById("checkout-btn");
-const checkoutForm = document.getElementById("checkout-form");
-const closeCheckout = document.getElementById("close-checkout");
-const cartItemsContainer = document.getElementById("cart-items");
-const cartTotal = document.getElementById("cart-total");
-const cartCount = document.getElementById("cart-count");
-const addToCartButtons = document.querySelectorAll(".add-to-cart");
+// UNDERDAWGS - Cart + Checkout System
 
 let cart = [];
 
-addToCartButtons.forEach(button => {
-  button.addEventListener("click", () => {
-    const product = button.closest(".product");
-    const name = product.querySelector("h3").innerText;
-    const price = parseInt(product.querySelector(".price").innerText.replace(/[^\d]/g, ""));
-    const size = product.querySelector(".size-select").value;
-
-    cart.push({ name, price, size });
-    updateCart();
-  });
-});
-
-function updateCart() {
-  cartItemsContainer.innerHTML = "";
-  let total = 0;
-  cart.forEach((item, index) => {
-    total += item.price;
-    const li = document.createElement("li");
-    li.textContent = `${item.name} (${item.size}) - ₹${item.price}`;
-    const removeBtn = document.createElement("button");
-    removeBtn.textContent = "Remove";
-    removeBtn.onclick = () => {
-      cart.splice(index, 1);
-      updateCart();
-    };
-    li.appendChild(removeBtn);
-    cartItemsContainer.appendChild(li);
-  });
-  cartTotal.textContent = `Total: ₹${total}`;
-  cartCount.textContent = cart.length;
+// Add product to cart
+function addToCart(name, price) {
+  const sizeSelect = document.getElementById(`size-${name}`);
+  const size = sizeSelect ? sizeSelect.value : "M"; // default size M
+  const item = { name, price, size };
+  cart.push(item);
+  updateCart();
 }
 
+// Remove product from cart
+function removeItem(index) {
+  cart.splice(index, 1);
+  updateCart();
+}
+
+// Update cart display
+function updateCart() {
+  const cartItems = document.getElementById("cart-items");
+  const totalPrice = document.getElementById("total-price");
+  cartItems.innerHTML = "";
+
+  let total = 0;
+
+  if (cart.length === 0) {
+    cartItems.innerHTML = `<p style="text-align:center; color:#aaa;">Your cart is empty</p>`;
+  } else {
+    cart.forEach((item, index) => {
+      total += item.price;
+      cartItems.innerHTML += `
+        <div class="cart-item">
+          <span>${item.name} (${item.size})</span>
+          <span>₹${item.price}</span>
+          <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
+        </div>
+      `;
+    });
+  }
+
+  totalPrice.textContent = `₹${total}`;
+}
+
+// Show or hide cart popup
+const cartPopup = document.getElementById("cart-popup");
+const cartBtn = document.getElementById("cart-btn");
+const closeCart = document.getElementById("close-cart");
+
 cartBtn.addEventListener("click", () => {
-  cartPopup.style.display = "flex";
+  cartPopup.classList.add("open");
 });
 
 closeCart.addEventListener("click", () => {
-  cartPopup.style.display = "none";
+  cartPopup.classList.remove("open");
 });
 
-checkoutBtn.addEventListener("click", () => {
-  cartPopup.style.display = "none";
-  checkoutForm.style.display = "flex";
-});
+// Checkout button
+document.getElementById("checkout-btn").addEventListener("click", () => {
+  if (cart.length === 0) {
+    // Stylish alert
+    const alertBox = document.createElement("div");
+    alertBox.textContent = "🛒 Your cart is empty! Add something before checkout.";
+    alertBox.style.position = "fixed";
+    alertBox.style.bottom = "20px";
+    alertBox.style.left = "50%";
+    alertBox.style.transform = "translateX(-50%)";
+    alertBox.style.background = "#e50914";
+    alertBox.style.color = "white";
+    alertBox.style.padding = "10px 20px";
+    alertBox.style.borderRadius = "8px";
+    alertBox.style.fontWeight = "600";
+    alertBox.style.zIndex = "9999";
+    document.body.appendChild(alertBox);
 
-closeCheckout.addEventListener("click", () => {
-  checkoutForm.style.display = "none";
+    setTimeout(() => {
+      alertBox.remove();
+    }, 2500);
+  } else {
+    // Proceed to checkout form
+    window.location.href = "#checkout";
+  }
 });
