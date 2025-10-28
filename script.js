@@ -1,61 +1,85 @@
-const cartBtn = document.getElementById("cart-btn");
-const cartPopup = document.getElementById("cart-popup");
-const closeCart = document.getElementById("close-cart");
-const checkoutBtn = document.getElementById("checkout-btn");
-const checkoutForm = document.getElementById("checkout-form");
-const closeCheckout = document.getElementById("close-checkout");
-const cartItemsContainer = document.getElementById("cart-items");
-const cartTotal = document.getElementById("cart-total");
-const cartCount = document.getElementById("cart-count");
-const addToCartButtons = document.querySelectorAll(".add-to-cart");
+// UNDERDAWGS Cart System - Fixed Version
 
 let cart = [];
 
-addToCartButtons.forEach(button => {
-  button.addEventListener("click", () => {
-    const product = button.closest(".product");
-    const name = product.querySelector("h3").innerText;
-    const price = parseInt(product.querySelector(".price").innerText.replace(/[^\d]/g, ""));
-    const size = product.querySelector(".size-select").value;
+// Add product to cart
+function addToCart(name, price) {
+  const sizeSelect = document.getElementById(`size-${name}`);
+  const size = sizeSelect ? sizeSelect.value : "M";
+  cart.push({ name, price, size });
+  updateCart();
+}
 
-    cart.push({ name, price, size });
-    updateCart();
-  });
-});
+// Remove product
+function removeItem(index) {
+  cart.splice(index, 1);
+  updateCart();
+}
 
+// Update cart UI
 function updateCart() {
-  cartItemsContainer.innerHTML = "";
+  const cartItems = document.getElementById("cart-items");
+  const totalPrice = document.getElementById("total-price");
+  cartItems.innerHTML = "";
+
+  if (cart.length === 0) {
+    cartItems.innerHTML = `<p style="text-align:center; color:#aaa;">Your cart is empty</p>`;
+    totalPrice.textContent = "₹0";
+    return;
+  }
+
   let total = 0;
   cart.forEach((item, index) => {
     total += item.price;
-    const li = document.createElement("li");
-    li.textContent = `${item.name} (${item.size}) - ₹${item.price}`;
-    const removeBtn = document.createElement("button");
-    removeBtn.textContent = "Remove";
-    removeBtn.onclick = () => {
-      cart.splice(index, 1);
-      updateCart();
-    };
-    li.appendChild(removeBtn);
-    cartItemsContainer.appendChild(li);
+    cartItems.innerHTML += `
+      <div class="cart-item">
+        <span>${item.name} (${item.size})</span>
+        <span>₹${item.price}</span>
+        <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
+      </div>
+    `;
   });
-  cartTotal.textContent = `Total: ₹${total}`;
-  cartCount.textContent = cart.length;
+
+  totalPrice.textContent = `₹${total}`;
 }
 
+// Cart popup logic
+const cartPopup = document.getElementById("cart-popup");
+const cartBtn = document.getElementById("cart-btn");
+const closeCart = document.getElementById("close-cart");
+const checkoutBtn = document.getElementById("checkout-btn");
+
 cartBtn.addEventListener("click", () => {
-  cartPopup.style.display = "flex";
+  cartPopup.classList.add("open");
 });
 
 closeCart.addEventListener("click", () => {
-  cartPopup.style.display = "none";
+  cartPopup.classList.remove("open");
 });
 
+// Checkout
 checkoutBtn.addEventListener("click", () => {
-  cartPopup.style.display = "none";
-  checkoutForm.style.display = "flex";
+  if (cart.length === 0) {
+    showAlert("🛒 Your cart is empty! Add something before checkout.");
+  } else {
+    window.location.href = "#checkout";
+  }
 });
 
-closeCheckout.addEventListener("click", () => {
-  checkoutForm.style.display = "none";
-});
+// Styled alert box
+function showAlert(message) {
+  const alertBox = document.createElement("div");
+  alertBox.textContent = message;
+  alertBox.style.position = "fixed";
+  alertBox.style.bottom = "20px";
+  alertBox.style.left = "50%";
+  alertBox.style.transform = "translateX(-50%)";
+  alertBox.style.background = "#e50914";
+  alertBox.style.color = "#fff";
+  alertBox.style.padding = "10px 20px";
+  alertBox.style.borderRadius = "8px";
+  alertBox.style.fontWeight = "600";
+  alertBox.style.zIndex = "9999";
+  document.body.appendChild(alertBox);
+  setTimeout(() => alertBox.remove(), 2500);
+}
