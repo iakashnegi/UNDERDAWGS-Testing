@@ -1,293 +1,205 @@
-/* -------------------------
-   UNDERDAWGS FINAL STYLE.CSS
-   Updated: Oct 2025
-   ------------------------- */
+/* UNDERDAWGS FINAL CSS (4 HOODIES PER VIEW) */
 
-/* Global Styles */
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
   background-color: #000;
   color: #fff;
 }
 
-/* Header Section */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #111;
-  padding: 15px 30px;
-  border-bottom: 2px solid #e63946;
+  background-color: #000;
+  padding: 15px 40px;
+  border-bottom: 2px solid #b60000;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 10;
 }
 
-/* Logo */
-header img {
-  height: 55px;
-  width: 55px;
-  border-radius: 10px;
-}
-
-/* Brand Name */
-.brand {
+.logo-section {
   display: flex;
-  flex-direction: column;
-  line-height: 1.2;
+  align-items: center;
+  gap: 10px;
 }
 
-.brand h1 {
-  margin: 0;
-  font-size: 28px;
-  color: #fff;
-  letter-spacing: 1px;
+.logo-section img {
+  width: 50px;
+  height: 50px;
 }
 
-.brand p {
-  margin: 0;
-  font-size: 16px;
-  color: #e63946;
-  font-weight: 500;
-}
-
-/* Cart Button */
-.cart-button {
-  background-color: #e63946;
-  color: white;
-  border: none;
-  padding: 10px 18px;
-  border-radius: 10px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s ease;
-  font-size: 16px;
-}
-
-.cart-button:hover {
-  background-color: #ff4444;
-}
-
-/* Main Tagline */
-.tagline {
-  text-align: center;
-  margin: 30px 0;
-}
-
-.tagline h2 {
+.brand-name {
   font-size: 22px;
-  color: #fff;
+  font-weight: 700;
+  color: #b60000;
 }
 
-.tagline span {
-  color: #e63946;
+.tagline {
+  font-size: 12px;
+  color: #ccc;
+}
+
+.cart-btn {
+  background-color: #b60000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
   font-weight: 600;
+  transition: 0.3s ease;
 }
 
-/* Section Title */
-.section-title {
+.cart-btn:hover {
+  background-color: #ff0000;
+}
+
+main {
   text-align: center;
-  font-size: 28px;
+  padding: 30px 10px;
+}
+
+h1 {
   color: #fff;
-  margin-top: 40px;
-  text-transform: uppercase;
+  font-size: 26px;
+  margin-bottom: 5px;
 }
 
-.sub-text {
-  text-align: center;
-  font-size: 16px;
-  color: #aaa;
-  margin-bottom: 20px;
+h2 {
+  color: #b60000;
+  margin-bottom: 30px;
 }
 
-/* Hoodie Collection Grid */
-.hoodie-collection {
+.products {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* ✅ 4 per row */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
-  justify-items: center;
-  padding: 20px;
+  justify-content: center;
+  padding: 0 20px;
+  max-width: 1200px;
+  margin: auto;
 }
 
-/* Hoodie Cards */
-.hoodie-card {
+.product {
   background-color: #111;
-  border: 1px solid #e63946;
-  border-radius: 10px;
-  text-align: center;
+  border: 1px solid #222;
+  border-radius: 15px;
   padding: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  max-width: 250px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
-.hoodie-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(230, 57, 70, 0.6);
+.product:hover {
+  transform: scale(1.03);
 }
 
-/* Hoodie Images */
-.hoodie-card img {
+.product img {
   width: 100%;
   height: 300px;
-  object-fit: cover; /* ✅ prevents stretching */
+  object-fit: cover;
   border-radius: 10px;
 }
 
-/* Price Styling */
-.price {
-  font-size: 18px;
-  color: #e63946;
-  font-weight: bold;
-}
-
-.old-price {
-  text-decoration: line-through;
-  color: #888;
-  margin-right: 5px;
-}
-
-/* Size Dropdown */
-.size-select {
-  padding: 5px;
+.product h3 {
+  color: #fff;
   margin-top: 10px;
-  border-radius: 5px;
-  border: none;
-  font-weight: 500;
+  font-size: 16px;
 }
 
-/* Add to Cart Button */
+.product p {
+  color: #aaa;
+  font-size: 14px;
+}
+
+.price {
+  color: #b60000;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
 .add-to-cart {
-  background-color: #e63946;
-  color: white;
+  background-color: #b60000;
+  color: #fff;
   border: none;
   padding: 8px 15px;
-  margin-top: 10px;
   border-radius: 8px;
-  font-weight: bold;
   cursor: pointer;
-  transition: 0.3s ease;
+  font-weight: 600;
+  margin-top: 10px;
+  transition: 0.3s;
 }
 
 .add-to-cart:hover {
-  background-color: #ff4444;
+  background-color: #ff0000;
 }
 
-/* Cart Modal */
-.cart-modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  justify-content: center;
-  align-items: center;
-  z-index: 2000;
-}
-
-.cart-content {
-  background-color: #111;
-  padding: 30px;
-  border-radius: 10px;
-  border: 2px solid #e63946;
-  width: 90%;
-  max-width: 500px;
-  text-align: center;
-}
-
-.cart-content h2 {
-  color: #fff;
-  font-size: 24px;
-}
-
-.cart-item {
-  display: flex;
-  justify-content: space-between;
-  margin: 10px 0;
-  font-size: 16px;
-}
-
-.remove-btn {
-  background-color: transparent;
-  color: #e63946;
-  border: none;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-/* Checkout Form */
+.cart-popup,
 .checkout-form {
   display: none;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #111;
+  color: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  z-index: 20;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 15px #b60000;
+}
+
+.cart-popup.active,
+.checkout-form.active {
+  display: block;
+}
+
+button.close-cart {
+  background: #b60000;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
 }
 
 .checkout-form input {
-  padding: 8px;
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0;
   border-radius: 6px;
   border: none;
-  outline: none;
-  font-size: 14px;
 }
 
 .checkout-form button {
-  background-color: #e63946;
+  background-color: #b60000;
   color: #fff;
   border: none;
-  padding: 8px;
-  border-radius: 6px;
-  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 8px;
   cursor: pointer;
+  font-weight: 600;
 }
 
 .checkout-form button:hover {
-  background-color: #ff4444;
+  background-color: #ff0000;
 }
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 15px;
-  color: #aaa;
-  border-top: 1px solid #222;
-  margin-top: 40px;
-  font-size: 14px;
-}
-
-/* Responsive - Mobile */
-@media (max-width: 768px) {
-  header {
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 10px 20px;
-  }
-
-  .brand h1 {
-    font-size: 22px;
-  }
-
-  .brand p {
-    font-size: 14px;
-  }
-
-  .hoodie-collection {
-    grid-template-columns: repeat(2, 1fr); /* ✅ 2 per row on mobile */
-    gap: 15px;
-  }
-
-  .hoodie-card {
-    max-width: 180px;
-  }
-
-  .hoodie-card img {
-    height: 200px;
-  }
-
-  .cart-content {
-    padding: 20px;
+/* Responsive */
+@media (min-width: 768px) {
+  .products {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
+
+@media (max-width: 767px) {
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+   }
