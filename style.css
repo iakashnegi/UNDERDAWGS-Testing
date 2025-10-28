@@ -1,227 +1,173 @@
-/* ==== GLOBAL STYLES ==== */
-* {
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
-}
-
-body {
+  font-family: "Poppins", sans-serif;
   background-color: #000;
   color: #fff;
-  overflow-x: hidden;
 }
 
-/* ==== NAVBAR ==== */
-.navbar {
+/* HEADER */
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 25px;
+  padding: 20px;
   background-color: #000;
   border-bottom: 2px solid red;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .logo {
   width: 60px;
-  height: auto;
+  height: 60px;
 }
 
 .brand {
+  font-size: 24px;
   color: red;
-  font-family: 'Anton', sans-serif;
   letter-spacing: 2px;
-  font-size: 1.8rem;
 }
 
-.cart-icon {
-  position: relative;
-  font-size: 1.6rem;
-  cursor: pointer;
-}
-
-#cart-count {
-  position: absolute;
-  top: -8px;
-  right: -10px;
-  background: red;
+.cart {
+  font-size: 20px;
   color: white;
-  border-radius: 50%;
-  padding: 2px 6px;
-  font-size: 0.7rem;
 }
 
-/* ==== HERO SECTION ==== */
-.hero {
+/* MAIN CONTENT */
+.collection {
   text-align: center;
-  padding: 100px 20px;
-  background: linear-gradient(180deg, #000, #111);
-}
-
-.hero h2 {
-  font-family: 'Anton', sans-serif;
-  font-size: 2.8rem;
-  color: red;
-  text-transform: uppercase;
-  margin-bottom: 15px;
-}
-
-.hero p {
-  font-size: 1.1rem;
-  color: #ccc;
-}
-
-/* ==== PRODUCT GRID ==== */
-.products {
   padding: 40px 20px;
-  text-align: center;
 }
 
-.products h2 {
-  font-family: 'Anton', sans-serif;
-  font-size: 2rem;
+.collection h2 {
+  font-size: 28px;
   color: red;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
-.hoodie-grid {
+/* PRODUCT GRID */
+.product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 30px;
   justify-items: center;
 }
 
-.hoodie-card {
-  background: #111;
-  border: 2px solid #222;
+.product-card {
+  background-color: #111;
+  border: 1px solid red;
   border-radius: 10px;
   padding: 15px;
-  transition: 0.3s;
-  max-width: 300px;
+  max-width: 280px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
 }
 
-.hoodie-card:hover {
-  transform: scale(1.05);
-  border-color: red;
-  box-shadow: 0 0 20px red;
-}
-
-.hoodie-card img {
+.product-card img {
   width: 100%;
+  height: auto;
   border-radius: 10px;
 }
 
-.hoodie-card h3 {
-  margin: 10px 0;
-  color: #fff;
-  font-size: 1.2rem;
-}
-
-.hoodie-card p {
-  color: #aaa;
-  margin-bottom: 10px;
+.price {
+  color: red;
   font-weight: bold;
+  margin: 10px 0;
 }
 
-.add-cart {
+.add-to-cart {
   background-color: red;
-  border: none;
-  padding: 10px 15px;
   color: white;
+  border: none;
+  padding: 10px 20px;
   font-weight: bold;
   cursor: pointer;
   border-radius: 5px;
   transition: 0.3s;
 }
 
-.add-cart:hover {
-  background-color: #ff4d4d;
+.add-to-cart:hover {
+  background-color: #ff4c4c;
 }
 
-/* ==== FOOTER ==== */
-footer {
+/* COMING SOON SECTION */
+.coming-soon {
   text-align: center;
-  padding: 30px;
-  border-top: 2px solid red;
-  background: #000;
-  color: #888;
-  font-size: 0.9rem;
+  padding: 60px 0;
+  color: gray;
 }
-/* ==== CHECKOUT POPUP ==== */
-.popup {
-  display: none;
+
+/* CHECKOUT MODAL */
+.modal {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.9);
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 2000;
+  z-index: 999;
 }
 
-.popup-content {
-  background: #111;
+.hidden {
+  display: none;
+}
+
+.modal-content {
+  background-color: #111;
   border: 2px solid red;
-  padding: 30px;
+  padding: 20px;
   border-radius: 10px;
   width: 90%;
   max-width: 400px;
-  text-align: center;
-  color: #fff;
 }
 
-.popup-content h2 {
+.modal-content h2 {
   color: red;
+  text-align: center;
   margin-bottom: 20px;
 }
 
-.popup-content ul {
-  list-style: none;
-  margin-bottom: 20px;
-  text-align: left;
+.modal-content label {
+  display: block;
+  margin: 10px 0 5px;
 }
 
-.popup-content li {
-  margin: 5px 0;
-  color: #ccc;
-}
-
-.popup-content input,
-.popup-content textarea {
+.modal-content input,
+.modal-content textarea {
   width: 100%;
-  margin-bottom: 15px;
-  padding: 10px;
-  background: #222;
-  border: none;
-  color: #fff;
+  padding: 8px;
+  background-color: #222;
+  border: 1px solid #444;
+  color: white;
   border-radius: 5px;
 }
 
-.popup-content button {
-  margin: 5px;
+.place-order {
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  margin-top: 15px;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
-.close-btn {
-  background-color: #444;
-}
-
-.close-btn:hover {
-  background-color: #666;
-}
-/* === THANK YOU POPUP STYLES === */
-.popup-content p {
-  color: #ddd;
-  margin-bottom: 10px;
-  font-size: 15px;
-}
-
-.popup-content h2 {
-  font-size: 24px;
-  font-weight: 700;
-  letter-spacing: 1px;
+.cancel {
+  background-color: #333;
+  border: none;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 5px;
 }
