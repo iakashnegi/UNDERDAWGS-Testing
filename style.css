@@ -1,217 +1,228 @@
-/* ====== General Styles ====== */
-body {
+/* General Reset */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+}
+
+body {
   background-color: #000;
   color: #fff;
-  text-align: center;
 }
 
-/* ====== Header ====== */
-header {
+/* Navbar */
+.navbar {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
   background-color: #000;
-  padding: 10px 16px;
-  border-bottom: 2px solid red;
+  border-bottom: 2px solid #b30000;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 1000;
 }
 
-header img.logo {
-  height: 45px;
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
   width: 45px;
-  object-fit: contain;
+  height: 45px;
 }
 
 .brand-name {
-  color: red;
-  font-size: 22px;
+  font-size: 1.6rem;
   font-weight: 700;
-  margin-left: 10px;
-  flex: 1;
-  text-align: left;
+  color: #e60000;
+  letter-spacing: 2px;
 }
 
-.cart-icon {
+.cart-container {
   position: relative;
 }
 
-.cart-icon img {
-  height: 26px;
-  width: 26px;
+.cart-btn {
+  background: none;
+  border: none;
+  color: #e60000;
+  font-size: 1.6rem;
+  cursor: pointer;
+  position: relative;
 }
 
-.cart-count {
+#cartCount {
   position: absolute;
-  top: -8px;
-  right: -8px;
-  background: red;
+  top: -10px;
+  right: -10px;
+  background: #e60000;
   color: #fff;
-  font-size: 12px;
-  font-weight: bold;
+  font-size: 0.8rem;
+  padding: 2px 6px;
   border-radius: 50%;
-  width: 18px;
-  height: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-/* ====== Section Title ====== */
-h2 {
-  color: red;
-  font-size: 26px;
-  margin: 20px 0 10px;
+/* Section Title */
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #e60000;
+  margin: 20px 0;
 }
 
-/* ====== Hoodie Grid ====== */
+/* Hoodie Grid */
 .hoodie-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 8px;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 15px;
   padding: 10px;
 }
 
-/* ====== Hoodie Card ====== */
 .hoodie-card {
   background-color: #111;
+  border: 2px solid #e60000;
   border-radius: 12px;
-  box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
-  padding: 8px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  text-align: center;
+  padding: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .hoodie-card:hover {
   transform: scale(1.03);
-  box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+  box-shadow: 0 0 20px #e60000;
 }
 
 .hoodie-card img {
   width: 100%;
-  height: auto;
-  aspect-ratio: 3/4;
+  height: 200px;
   object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 8px;
+  border-radius: 10px;
 }
 
 .hoodie-card h3 {
-  font-size: 14px;
-  margin: 6px 0 2px;
+  margin-top: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  min-height: 45px;
 }
 
 .price {
-  font-size: 15px;
-  color: #ff3b3b;
-  margin-bottom: 8px;
+  color: #e60000;
+  font-size: 1rem;
+  margin: 5px 0;
 }
 
-/* ====== Size Selector ====== */
-.size-selector {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 8px;
-}
-
-.size-selector select {
-  background-color: #fff;
-  color: #000;
-  font-weight: 600;
-  border-radius: 5px;
-  padding: 3px 5px;
+.size-select {
+  width: 70px;
+  padding: 5px;
   border: none;
-  font-size: 12px;
+  border-radius: 6px;
+  margin-right: 5px;
 }
 
-/* ====== Button ====== */
-button {
-  background-color: red;
-  color: white;
+.add-to-cart {
+  background-color: #e60000;
+  color: #fff;
   border: none;
-  padding: 5px 12px;
-  border-radius: 8px;
-  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  font-weight: 600;
+  transition: 0.2s;
 }
 
-button:hover {
-  background-color: #d00000;
+.add-to-cart:hover {
+  background-color: #ff1a1a;
 }
 
-/* ====== Cart Section ====== */
-.cart-container {
-  background-color: #111;
-  color: white;
+/* Cart Modal */
+.cart-modal {
+  display: none;
   position: fixed;
-  top: 60px;
-  right: 0;
-  width: 300px;
-  height: calc(100% - 60px);
-  box-shadow: -2px 0 8px rgba(255, 0, 0, 0.4);
-  padding: 15px;
-  overflow-y: auto;
-  transform: translateX(100%);
-  transition: transform 0.3s ease-in-out;
-  z-index: 20;
-}
-
-.cart-container.active {
-  transform: translateX(0);
-}
-
-.cart-container h3 {
-  color: red;
-  margin-bottom: 10px;
-}
-
-.cart-item {
-  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
+  z-index: 2000;
+}
+
+.cart-content {
+  background-color: #111;
+  border: 2px solid #e60000;
+  border-radius: 12px;
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.cart-content h2 {
+  color: #e60000;
+  margin-bottom: 15px;
+}
+
+#cartItems {
+  list-style: none;
   margin-bottom: 10px;
-  border-bottom: 1px solid red;
-  padding-bottom: 8px;
-}
-
-.cart-item img {
-  width: 45px;
-  height: 45px;
-  object-fit: cover;
-  border-radius: 5px;
-}
-
-.cart-item-details {
+  max-height: 200px;
+  overflow-y: auto;
   text-align: left;
-  flex: 1;
-  margin-left: 6px;
-  font-size: 12px;
 }
 
-.cart-total {
-  font-weight: bold;
-  color: red;
-  margin-top: 12px;
+#cartItems li {
+  margin-bottom: 8px;
 }
 
-/* ====== Responsive ====== */
-@media (max-width: 600px) {
+#checkoutBtn {
+  background-color: #e60000;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  font-weight: 600;
+  border-radius: 6px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+#closeCart {
+  background-color: #444;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#checkoutBtn:hover {
+  background-color: #ff1a1a;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
   .hoodie-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-
   .hoodie-card img {
-    aspect-ratio: 3/4;
-    height: auto;
+    height: 160px;
   }
+}
 
+@media (max-width: 480px) {
+  .hoodie-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hoodie-card img {
+    height: 140px;
+  }
   .brand-name {
-    font-size: 20px;
+    font-size: 1.3rem;
   }
 }
