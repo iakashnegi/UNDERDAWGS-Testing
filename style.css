@@ -196,3 +196,13 @@ h1 {
   border-radius: 6px;
   cursor: pointer;
 }
+/* 🔥 CART PULSE ANIMATION */
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 0px red; }
+  50% { transform: scale(1.2); box-shadow: 0 0 20px red; }
+  100% { transform: scale(1); box-shadow: 0 0 0px red; }
+}
+
+.pulse {
+  animation: pulse 0.8s ease;
+}
