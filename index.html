@@ -1,161 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UNDERDAWGS | Hoodies</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Arial Black', sans-serif;
-      background-color: #000;
-      color: #fff;
-      text-align: center;
-    }
-    header {
-      padding: 20px;
-    }
-    header img {
-      width: 120px;
-    }
-    h1 {
-      font-size: 2.8em;
-      color: red;
-      letter-spacing: 1px;
-    }
-    h2 {
-      color: #fff;
-      font-size: 2em;
-      margin-top: 40px;
-    }
-    .hoodie-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      padding: 40px;
-    }
-    .hoodie {
-      background-color: #111;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 0 10px red;
-    }
-    .hoodie img {
-      width: 100%;
-      border-radius: 10px;
-    }
-    .price {
-      font-size: 1.2em;
-      margin: 10px 0;
-    }
-    .price span {
-      text-decoration: line-through;
-      color: gray;
-      margin-left: 8px;
-    }
-    form {
-      margin-top: 10px;
-    }
-    input, select, button {
-      width: 90%;
-      padding: 10px;
-      margin-top: 8px;
-      border: none;
-      border-radius: 8px;
-      font-size: 1em;
-    }
-    button {
-      background-color: red;
-      color: white;
-      cursor: pointer;
-      font-weight: bold;
-      transition: background 0.3s ease;
-    }
-    button:hover {
-      background-color: darkred;
-    }
-    footer {
-      margin-top: 60px;
-      padding: 20px;
-      font-size: 1.2em;
-      border-top: 2px solid red;
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <img src="logo.png" alt="UNDERDAWGS Logo" />
-    <h1>UNDERDAWGS</h1>
-    <p>BORN UNDERGROUND. RAISED EVERYWHERE.</p>
-  </header>
-
+<section class="hoodies">
   <h2>HOODIES</h2>
 
-  <div class="hoodie-container">
-    
-    <!-- Hoodie 1 -->
-    <div class="hoodie">
-      <img src="hoodie1.jpg" alt="Classic UNDERDAWGS Hoodie">
-      <h3>Classic UNDERDAWGS Hoodie</h3>
-      <div class="price">₹1200 <span>₹1500</span></div>
-      <form action="https://formspree.io/f/movpedod" method="POST">
-        <input type="hidden" name="hoodie" value="Classic UNDERDAWGS Hoodie">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <input type="text" name="address" placeholder="Shipping Address" required>
-        <button type="submit">Buy Now</button>
-      </form>
-    </div>
-
-    <!-- Hoodie 2 -->
-    <div class="hoodie">
-      <img src="hoodie2.jpg" alt="Red Fang Hoodie">
-      <h3>Red Fang Hoodie</h3>
-      <div class="price">₹1200 <span>₹1500</span></div>
-      <form action="https://formspree.io/f/movpedod" method="POST">
-        <input type="hidden" name="hoodie" value="Red Fang Hoodie">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <input type="text" name="address" placeholder="Shipping Address" required>
-        <button type="submit">Buy Now</button>
-      </form>
-    </div>
-
-    <!-- Hoodie 3 -->
-    <div class="hoodie">
-      <img src="hoodie3.jpg" alt="Blackout Hoodie">
-      <h3>Blackout Hoodie</h3>
-      <div class="price">₹1200 <span>₹1500</span></div>
-      <form action="https://formspree.io/f/movpedod" method="POST">
-        <input type="hidden" name="hoodie" value="Blackout Hoodie">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <input type="text" name="address" placeholder="Shipping Address" required>
-        <button type="submit">Buy Now</button>
-      </form>
-    </div>
-
-    <!-- Hoodie 4 -->
-    <div class="hoodie">
-      <img src="hoodie4.jpg" alt="Street Edition Hoodie">
-      <h3>Street Edition Hoodie</h3>
-      <div class="price">₹1200 <span>₹1500</span></div>
-      <form action="https://formspree.io/f/movpedod" method="POST">
-        <input type="hidden" name="hoodie" value="Street Edition Hoodie">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <input type="text" name="address" placeholder="Shipping Address" required>
-        <button type="submit">Buy Now</button>
-      </form>
-    </div>
-
+  <div class="hoodie">
+    <img src="hoodie1.jpg" alt="UNDERDAWGS Hoodie 1">
+    <h3>Classic UNDERDAWGS Hoodie</h3>
+    <p>₹1500 <span class="discount">₹1200</span></p>
+    <button>Add to Cart</button>
   </div>
 
-  <footer>
-    <h2>COMING SOON</h2>
-    <p>T-Shirts collection dropping soon. Stay tuned.</p>
-  </footer>
+  <div class="hoodie">
+    <img src="hoodie2.jpg" alt="UNDERDAWGS Hoodie 2">
+    <h3>Red Fang Hoodie</h3>
+    <p>₹1500 <span class="discount">₹1200</span></p>
+    <button>Add to Cart</button>
+  </div>
 
-</body>
-</html>
+  <div class="hoodie">
+    <img src="hoodie3.jpg" alt="UNDERDAWGS Hoodie 3">
+    <h3>Blackout Hoodie</h3>
+    <p>₹1500 <span class="discount">₹1200</span></p>
+    <button>Add to Cart</button>
+  </div>
+
+  <div class="hoodie">
+    <img src="hoodie4.jpg" alt="UNDERDAWGS Hoodie 4">
+    <h3>Street Edition Hoodie</h3>
+    <p>₹1500 <span class="discount">₹1200</span></p>
+    <button>Add to Cart</button>
+  </div>
+
+  <div class="hoodie">
+    <img src="hoodie5.jpg" alt="UNDERDAWGS Hoodie 5">
+    <h3>Wolf Pack Hoodie</h3>
+    <p>₹1500 <span class="discount">₹1200</span></p>
+    <button>Add to Cart</button>
+  </div>
+
+  <div class="hoodie">
+    <img src="hoodie6.jpg" alt="UNDERDAWGS Hoodie 6">
+    <h3>Crimson Dawg Hoodie</h3>
+    <p>₹1500 <span class="discount">₹1200</span></p>
+    <button>Add to Cart</button>
+  </div>
+
+  <div class="hoodie">
+    <img src="hoodie7.jpg" alt="UNDERDAWGS Hoodie 7">
+    <h3>Underground Heat Hoodie</h3>
+    <p>₹1500 <span class="discount">₹1200</span></p>
+    <button>Add to Cart</button>
+  </div>
+
+  <div class="hoodie">
+    <img src="hoodie8.jpg" alt="UNDERDAWGS Hoodie 8">
+    <h3>Legacy Hoodie</h3>
+    <p>₹1500 <span class="discount">₹1200</span></p>
+    <button>Add to Cart</button>
+  </div>
+</section>
