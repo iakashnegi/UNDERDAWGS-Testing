@@ -1,48 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Urban Shadow Hoodie | UNDERDAWGS</title>
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<header class="header">
-  <div class="logo-section" onclick="window.location.href='../index.html'">
-    <img src="../logo.png" alt="UNDERDAWGS Logo" class="logo">
-    <div class="brand-text">
-      <h1 class="brand-name">UNDERDAWGS</h1>
-      <p class="tagline-small">Born Underground. Born Everywhere.</p>
+  <header class="header">
+    <div class="logo-section" onclick="window.location.href='index.html'">
+      <img src="logo.png" alt="UNDERDAWGS" class="logo" />
+      <div class="brand-text">
+        <span class="brand-name">UNDERDAWGS</span>
+        <span class="tagline-small">Born Underground. Born Everywhere.</span>
+      </div>
     </div>
-  </div>
-  <button id="cart-btn" class="cart-btn">🛒 Cart (<span id="cart-count">0</span>)</button>
-</header>
-
-<section class="product-detail-page">
-  <div class="product-detail-container">
-    <img src="../hoodie3.jpg" alt="Urban Shadow Hoodie" class="detail-image">
-    <div class="detail-info">
-      <h2>Urban Shadow Hoodie</h2>
-      <p class="detail-price"><span class="old">₹2699</span> ₹1999</p>
-      <p class="detail-description">
-        Dark, sleek, and unstoppable — the <b>Urban Shadow Hoodie</b> blends stealth with comfort. 
-        Perfect for city runs or chilling in your zone.
-      </p>
-
-      <select class="size-select">
-        <option>Select Size</option>
-        <option>S</option>
-        <option>M</option>
-        <option>L</option>
-        <option>XL</option>
-        <option>XXL</option>
-      </select>
-
-      <button class="add-to-cart">Add to Cart</button>
+    <div style="display:flex;align-items:center;gap:10px">
+      <button class="btn-back" onclick="window.location.href='index.html'">← Home</button>
+      <button id="cart-btn" class="cart-btn">🛒 Cart (<span id="cart-count">0</span>)</button>
     </div>
-  </div>
-</section>
+  </header>
 
-<script src="../script.js"></script>
+  <section class="product-detail-page">
+    <div class="product-detail-container">
+      <img src="hoodie3.jpg" alt="Urban Shadow Hoodie" class="detail-image" />
+      <div class="detail-info">
+        <h2>Urban Shadow Hoodie</h2>
+        <div class="detail-price"><span class="old">₹2699</span> ₹1999</div>
+        <p class="detail-description">
+          Dark, sleek, and unstoppable — the <strong>Urban Shadow Hoodie</strong> blends stealth with comfort.
+          Perfect for the underground hustler — comfort, stealth, and swagger in one.
+        </p>
+
+        <label for="size3" class="small-muted">Select Size</label>
+        <select id="size3" class="size-select">
+          <option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
+        </select>
+
+        <div class="detail-cta-row">
+          <button class="add-to-cart" data-name="Urban Shadow Hoodie" data-price="1999">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>
