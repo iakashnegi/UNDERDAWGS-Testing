@@ -1,34 +1,122 @@
-<section id="hoodies" class="section">
-  <h2>HOODIES</h2>
-  <div class="product-list">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UNDERDAWGS | Hoodies</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-    <div class="product-card">
-      <img src="hoodie1.jpg" alt="Classic UNDERDAWGS Hoodie">
-      <h3>Classic UNDERDAWGS Hoodie</h3>
-      <p class="price">₹1999</p>
-      <button class="btn">Add to Cart</button>
+  <!-- HEADER -->
+  <header>
+    <img src="logo.png" alt="UNDERDAWGS Logo" />
+    <h1>UNDERDAWGS</h1>
+  </header>
+
+  <!-- HOODIES SECTION -->
+  <section id="hoodies">
+    <h2>Hoodies</h2>
+    <div class="products">
+
+      <!-- Hoodie 1 -->
+      <div class="product-card">
+        <img src="hoodie1.jpg" alt="Classic UNDERDAWGS Hoodie">
+        <h3>Classic UNDERDAWGS Hoodie</h3>
+        <p>₹1999</p>
+        <button onclick="addToCart('Classic UNDERDAWGS Hoodie', 1999)">Add to Cart</button>
+      </div>
+
+      <!-- Hoodie 2 -->
+      <div class="product-card">
+        <img src="hoodie2.jpg" alt="Mountain Spirit Hoodie">
+        <h3>Mountain Spirit Hoodie</h3>
+        <p>₹1899</p>
+        <button onclick="addToCart('Mountain Spirit Hoodie', 1899)">Add to Cart</button>
+      </div>
+
+      <!-- Hoodie 3 -->
+      <div class="product-card">
+        <img src="hoodie3.jpg" alt="Born from the Hills Hoodie">
+        <h3>Born from the Hills Hoodie</h3>
+        <p>₹1799</p>
+        <button onclick="addToCart('Born from the Hills Hoodie', 1799)">Add to Cart</button>
+      </div>
+
+      <!-- Hoodie 4 -->
+      <div class="product-card">
+        <img src="hoodie4.jpg" alt="Peaks Edition Hoodie">
+        <h3>Peaks Edition Hoodie</h3>
+        <p>₹2099</p>
+        <button onclick="addToCart('Peaks Edition Hoodie', 2099)">Add to Cart</button>
+      </div>
+
+      <!-- Hoodie 5 -->
+      <div class="product-card">
+        <img src="hoodie5.jpg" alt="Wilderness Hoodie">
+        <h3>Wilderness Hoodie</h3>
+        <p>₹2199</p>
+        <button onclick="addToCart('Wilderness Hoodie', 2199)">Add to Cart</button>
+      </div>
+
+      <!-- Hoodie 6 -->
+      <div class="product-card">
+        <img src="hoodie6.jpg" alt="Red Peak Hoodie">
+        <h3>Red Peak Hoodie</h3>
+        <p>₹2299</p>
+        <button onclick="addToCart('Red Peak Hoodie', 2299)">Add to Cart</button>
+      </div>
+
+      <!-- Hoodie 7 -->
+      <div class="product-card">
+        <img src="hoodie7.jpg" alt="Frost Trail Hoodie">
+        <h3>Frost Trail Hoodie</h3>
+        <p>₹1999</p>
+        <button onclick="addToCart('Frost Trail Hoodie', 1999)">Add to Cart</button>
+      </div>
+
+      <!-- Hoodie 8 -->
+      <div class="product-card">
+        <img src="hoodie8.jpg" alt="Retro Summit Hoodie">
+        <h3>Retro Summit Hoodie</h3>
+        <p>₹1899</p>
+        <button onclick="addToCart('Retro Summit Hoodie', 1899)">Add to Cart</button>
+      </div>
+
     </div>
+  </section>
 
-    <div class="product-card">
-      <img src="hoodie2.jpg" alt="Mountain Spirit Hoodie">
-      <h3>Mountain Spirit Hoodie</h3>
-      <p class="price">₹1899</p>
-      <button class="btn">Add to Cart</button>
-    </div>
+  <!-- T-SHIRTS PLACEHOLDER -->
+  <section id="tshirts">
+    <h2>T-Shirts (Coming Soon)</h2>
+  </section>
 
-    <div class="product-card">
-      <img src="hoodie3.jpg" alt="Born from the Hills Hoodie">
-      <h3>Born from the Hills Hoodie</h3>
-      <p class="price">₹1799</p>
-      <button class="btn">Add to Cart</button>
-    </div>
+  <!-- CHECKOUT SECTION -->
+  <section id="checkout">
+    <h2>Checkout</h2>
+    <form action="https://formspree.io/f/movpedod" method="POST">
+      <input type="text" name="product" id="productName" placeholder="Product Name" required />
+      <input type="text" name="price" id="productPrice" placeholder="Price" required />
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <textarea name="address" placeholder="Address" required></textarea>
+      <button type="submit">Place Order</button>
+    </form>
+  </section>
 
-    <div class="product-card">
-      <img src="hoodie4.jpg" alt="Peaks Edition Hoodie">
-      <h3>Peaks Edition Hoodie</h3>
-      <p class="price">₹2099</p>
-      <button class="btn">Add to Cart</button>
-    </div>
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 UNDERDAWGS. All Rights Reserved.</p>
+  </footer>
 
-  </div>
-</section>
+  <!-- SCRIPT -->
+  <script>
+    function addToCart(product, price) {
+      document.getElementById('productName').value = product;
+      document.getElementById('productPrice').value = "₹" + price;
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+</html>
