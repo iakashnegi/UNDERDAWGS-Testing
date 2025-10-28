@@ -1,91 +1,77 @@
-// === CART FUNCTIONALITY ===
+// ==================== CART LOGIC ====================
+const cartCount = document.getElementById("cart-count");
+const addToCartButtons = document.querySelectorAll(".add-to-cart");
+const modal = document.getElementById("checkout-modal");
+const cancelOrder = document.getElementById("cancel-order");
+const checkoutForm = document.getElementById("checkout-form");
+const productNameInput = document.getElementById("product-name");
+const productPriceInput = document.getElementById("product-price");
+
 let cart = [];
 
-function addToCart(productName, price) {
-  cart.push({ name: productName, price: price });
-  updateCartCount();
-  alert(`${productName} added to cart!`);
-}
+// Add to Cart Button Logic
+addToCartButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    const name = button.getAttribute("data-name");
+    const price = parseInt(button.getAttribute("data-price"));
+    cart.push({ name, price });
+    cartCount.textContent = cart.length;
 
-function updateCartCount() {
-  const cartCount = document.getElementById('cart-count');
-  cartCount.textContent = cart.length;
-}
-
-// === SHOW CHECKOUT POPUP ===
-function checkout() {
-  if (cart.length === 0) {
-    alert('Your cart is empty!');
-    return;
-  }
-
-  const popup = document.getElementById("checkout-popup");
-  const orderList = document.getElementById("order-list");
-
-  orderList.innerHTML = "";
-  cart.forEach(item => {
-    const li = document.createElement("li");
-    li.textContent = `${item.name} - ₹${item.price}`;
-    orderList.appendChild(li);
+    // Automatically open checkout modal
+    openCheckout(name, price);
   });
+});
 
-  popup.style.display = "flex";
+// ==================== CHECKOUT LOGIC ====================
+
+// Open Checkout Modal
+function openCheckout(name, price) {
+  productNameInput.value = name;
+  productPriceInput.value = "₹" + price;
+  modal.classList.remove("hidden");
+  document.body.style.overflow = "hidden";
 }
 
-// === CLOSE POPUP ===
-function closePopup() {
-  document.getElementById("checkout-popup").style.display = "none";
-}
+// Close Modal
+cancelOrder.addEventListener("click", () => {
+  modal.classList.add("hidden");
+  document.body.style.overflow = "auto";
+});
 
-// === SUBMIT ORDER ===
-function submitOrder(event) {
+// ==================== FORMSPREE SUBMISSION ====================
+
+checkoutForm.addEventListener("submit", async (event) => {
   event.preventDefault();
 
-  const name = document.getElementById("cust-name").value;
-  const email = document.getElementById("cust-email").value;
-  const phone = document.getElementById("cust-phone").value;
-  const address = document.getElementById("cust-address").value;
+  const formData = new FormData(checkoutForm);
 
-  let orderDetails = cart.map(item => `${item.name} - ₹${item.price}`).join("\n");
+  try {
+    const response = await fetch("https://formspree.io/f/movpedod", {
+      method: "POST",
+      headers: { "Accept": "application/json" },
+      body: formData,
+    });
 
-  fetch("https://formspree.io/f/movpedod", {
-    method: "POST",
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      name: name,
-      email: email,
-      phone: phone,
-      address: address,
-      message: `New UNDERDAWGS Order:\n\n${orderDetails}`
-    })
-  })
-  .then(response => {
     if (response.ok) {
-      showThankYouScreen();
+      alert("✅ Order placed successfully! We’ll contact you soon.");
+      checkoutForm.reset();
+      modal.classList.add("hidden");
+      document.body.style.overflow = "auto";
       cart = [];
-      updateCartCount();
-      document.getElementById("checkout-form").reset();
+      cartCount.textContent = "0";
     } else {
-      alert("Something went wrong. Please try again.");
+      alert("❌ Something went wrong. Please try again.");
     }
-  })
-  .catch(() => alert("Network error. Please check your connection."));
-}
+  } catch (error) {
+    console.error("Error submitting form:", error);
+    alert("⚠️ Network error. Please check your internet connection.");
+  }
+});
 
-// === SHOW THANK YOU SCREEN ===
-function showThankYouScreen() {
-  const popup = document.getElementById("checkout-popup");
-  popup.innerHTML = `
-    <div class="popup-content">
-      <h2>THANK YOU 🐾</h2>
-      <p>Your order has been placed successfully!</p>
-      <p>Team <b>UNDERDAWGS</b> will contact you shortly.</p>
-      <button onclick="closeThankYou()" class="add-cart">Close</button>
-    </div>
-  `;
-  popup.style.display = "flex";
-}
-
-function closeThankYou() {
-  document.getElementById("checkout-popup").style.display = "none";
-}
+// Close modal on outside click
+window.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.classList.add("hidden");
+    document.body.style.overflow = "auto";
+  }
+});
