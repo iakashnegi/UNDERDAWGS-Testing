@@ -1,60 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UNDERDAWGS - Hoodies</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>UNDERDAWGS - Official Hoodie Store</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <img src="logo.png" alt="UNDERDAWGS Logo" class="logo" />
-    <h1>UNDERDAWGS</h1>
-    <p class="tagline">BORN UNDERGROUND. BORN EVERYWHERE.</p>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="logo.png" alt="UNDERDAWGS" class="logo">
+        <div>
+          <div class="brand-name">UNDERDAWGS</div>
+          <div class="brand-tag">BORN UNDERGROUND, BORN EVERYWHERE</div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="cartToggle" class="cart-btn">Cart (<span id="cartCount">0</span>)</button>
+      </div>
+    </div>
   </header>
 
-  <main>
-    <section class="products">
-      <h2>HOODIES</h2>
-
-      <div class="product">
-        <img src="hoodie1.jpg" alt="UNDERDAWGS Hoodie 1" />
-        <h3>Classic UNDERDAWGS Hoodie</h3>
-        <p><span class="old-price">₹1500</span> ₹1200</p>
-        <button>Add to Cart</button>
+  <main class="container">
+    <section class="hero">
+      <div class="hero-left">
+        <h1 class="hero-title">BORN UNDERGROUND, WORN EVERYWHERE.</h1>
+        <p class="hero-sub">Printed hoodies — small batches, loud prints.</p>
+        <a href="#products" class="btn primary">Shop Hoodies</a>
       </div>
-
-      <div class="product">
-        <img src="hoodie2.jpg" alt="UNDERDAWGS Hoodie 2" />
-        <h3>Red Fang Hoodie</h3>
-        <p><span class="old-price">₹1500</span> ₹1200</p>
-        <button>Add to Cart</button>
-      </div>
-
-      <div class="product">
-        <img src="hoodie3.jpg" alt="UNDERDAWGS Hoodie 3" />
-        <h3>Blackout Hoodie</h3>
-        <p><span class="old-price">₹1500</span> ₹1200</p>
-        <button>Add to Cart</button>
-      </div>
-
-      <div class="product">
-        <img src="hoodie4.jpg" alt="UNDERDAWGS Hoodie 4" />
-        <h3>Street Edition Hoodie</h3>
-        <p><span class="old-price">₹1500</span> ₹1200</p>
-        <button>Add to Cart</button>
+      <div class="hero-right">
+        <img src="hoodie1.jpg" alt="Featured hoodie" class="hero-image">
       </div>
     </section>
 
-    <section class="coming-soon">
-      <h2>COMING SOON</h2>
-      <p>T-Shirts collection dropping soon. Stay tuned.</p>
+    <section id="products" class="products-grid">
+      <!-- Product cards -->
+      <article class="product-card" data-id="1" data-name="THE HOWL — BLACK" data-price="1200">
+        <div class="imgwrap"><img src="hoodie1.jpg" alt="THE HOWL"></div>
+        <div class="card-body">
+          <h3>THE HOWL — BLACK</h3>
+          <div class="price"><span class="orig">₹1500</span> <span class="sale">₹1200</span></div>
+          <button class="add-to-cart">Add to cart</button>
+        </div>
+      </article>
+
+      <article class="product-card" data-id="2" data-name="CITY BONES — GREY" data-price="1200">
+        <div class="imgwrap"><img src="hoodie2.jpg" alt="CITY BONES"></div>
+        <div class="card-body">
+          <h3>CITY BONES — GREY</h3>
+          <div class="price"><span class="orig">₹1500</span> <span class="sale">₹1200</span></div>
+          <button class="add-to-cart">Add to cart</button>
+        </div>
+      </article>
+
+      <article class="product-card" data-id="3" data-name="NEON BITE — WHITE" data-price="1200">
+        <div class="imgwrap"><img src="hoodie3.jpg" alt="NEON BITE"></div>
+        <div class="card-body">
+          <h3>NEON BITE — WHITE</h3>
+          <div class="price"><span class="orig">₹1500</span> <span class="sale">₹1200</span></div>
+          <button class="add-to-cart">Add to cart</button>
+        </div>
+      </article>
+
+      <article class="product-card" data-id="4" data-name="UNDER PATCH — OLIVE" data-price="1200">
+        <div class="imgwrap"><img src="hoodie4.jpg" alt="UNDER PATCH"></div>
+        <div class="card-body">
+          <h3>UNDER PATCH — OLIVE</h3>
+          <div class="price"><span class="orig">₹1500</span> <span class="sale">₹1200</span></div>
+          <button class="add-to-cart">Add to cart</button>
+        </div>
+      </article>
+
+      <article class="product-card" data-id="5" data-name="RIOT SCRIPT — BLACK" data-price="1200">
+        <div class="imgwrap"><img src="hoodie5.jpg" alt="RIOT SCRIPT"></div>
+        <div class="card-body">
+          <h3>RIOT SCRIPT — BLACK</h3>
+          <div class="price"><span class="orig">₹1500</span> <span class="sale">₹1200</span></div>
+          <button class="add-to-cart">Add to cart</button>
+        </div>
+      </article>
+
+      <article class="product-card" data-id="6" data-name="SHADOW GRID — CHARCOAL" data-price="1200">
+        <div class="imgwrap"><img src="hoodie6.jpg" alt="SHADOW GRID"></div>
+        <div class="card-body">
+          <h3>SHADOW GRID — CHARCOAL</h3>
+          <div class="price"><span class="orig">₹1500</span> <span class="sale">₹1200</span></div>
+          <button class="add-to-cart">Add to cart</button>
+        </div>
+      </article>
+
+      <article class="product-card" data-id="7" data-name="NIGHT HOWL — BLACK" data-price="1200">
+        <div class="imgwrap"><img src="hoodie7.jpg" alt="NIGHT HOWL"></div>
+        <div class="card-body">
+          <h3>NIGHT HOWL — BLACK</h3>
+          <div class="price"><span class="orig">₹1500</span> <span class="sale">₹1200</span></div>
+          <button class="add-to-cart">Add to cart</button>
+        </div>
+      </article>
+
+      <article class="product-card" data-id="8" data-name="SILENT ROAR — MAROON" data-price="1200">
+        <div class="imgwrap"><img src="hoodie8.jpg" alt="SILENT ROAR"></div>
+        <div class="card-body">
+          <h3>SILENT ROAR — MAROON</h3>
+          <div class="price"><span class="orig">₹1500</span> <span class="sale">₹1200</span></div>
+          <button class="add-to-cart">Add to cart</button>
+        </div>
+      </article>
+    </section>
+
+    <section id="coming" class="coming">
+      <h3>Coming Soon: T-Shirts</h3>
+      <p>Stay tuned — our t-shirt collection drops soon.</p>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 UNDERDAWGS. All rights reserved.</p>
-  </footer>
+  <!-- CART DRAWER -->
+  <aside id="cartDrawer" class="cart-drawer hidden">
+    <div class="cart-head">
+      <strong>Your Cart</strong>
+      <button id="closeCart">✕</button>
+    </div>
+
+    <div id="cartItems" class="cart-items"></div>
+
+    <div class="cart-foot">
+      <div>Subtotal: <span id="subtotal">₹0</span></div>
+
+      <!-- Checkout form posts to Formspree via JS (see script.js) -->
+      <form id="checkoutForm" class="checkout-form">
+        <input type="text" id="customerName" name="name" placeholder="Full name" required />
+        <input type="text" id="customerPhone" name="phone" placeholder="Phone (or WhatsApp)" required />
+        <input type="text" id="customerAddress" name="address" placeholder="Shipping address" required />
+        <input type="email" id="customerEmail" name="email" placeholder="Email" required value="akashnegiwork@gmail.com" />
+        <textarea id="orderNote" name="note" placeholder="Note (size, color...)" rows="2"></textarea>
+
+        <button type="submit" class="btn primary full">Place Order</button>
+        <div id="formMessage" class="muted small"></div>
+      </form>
+    </div>
+  </aside>
+
+  <div id="toast" class="toast hidden">Item added</div>
 
   <script src="script.js"></script>
 </body>
