@@ -1,173 +1,182 @@
-body {
+/* Reset and Base Styles */
+* {
   margin: 0;
   padding: 0;
-  font-family: "Poppins", sans-serif;
-  background-color: #000;
-  color: #fff;
+  box-sizing: border-box;
+  font-family: 'Impact', 'Arial Black', sans-serif;
 }
 
-/* HEADER */
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
+body {
   background-color: #000;
+  color: #fff;
+  overflow-x: hidden;
+  text-align: center;
+}
+
+/* Header */
+.header {
+  background: #000;
+  padding: 20px 10px;
   border-bottom: 2px solid red;
 }
 
-.logo-section {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
 .logo {
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  vertical-align: middle;
 }
 
-.brand {
-  font-size: 24px;
+.brand-name {
   color: red;
-  letter-spacing: 2px;
+  font-size: 2.5rem;
+  letter-spacing: 3px;
 }
 
-.cart {
-  font-size: 20px;
-  color: white;
+/* Section Titles */
+.section-title {
+  color: #fff;
+  font-size: 2rem;
+  margin: 30px 0 10px;
+  border-bottom: 2px solid red;
+  display: inline-block;
 }
 
-/* MAIN CONTENT */
-.collection {
-  text-align: center;
-  padding: 40px 20px;
-}
-
-.collection h2 {
-  font-size: 28px;
-  color: red;
-  margin-bottom: 30px;
-}
-
-/* PRODUCT GRID */
-.product-grid {
+/* Product Grid */
+.products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 30px;
   justify-items: center;
 }
 
 .product-card {
   background-color: #111;
-  border: 1px solid red;
-  border-radius: 10px;
-  padding: 15px;
-  max-width: 280px;
-  text-align: center;
-  box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
+  border: 2px solid #222;
+  border-radius: 15px;
+  padding: 20px;
+  width: 100%;
+  max-width: 300px;
+  transition: 0.3s;
+}
+
+.product-card:hover {
+  border-color: red;
+  transform: scale(1.05);
 }
 
 .product-card img {
   width: 100%;
-  height: auto;
   border-radius: 10px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.product-card h3 {
+  margin: 15px 0 5px;
+  color: #fff;
 }
 
 .price {
   color: red;
-  font-weight: bold;
-  margin: 10px 0;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
 }
 
-.add-to-cart {
+/* Buttons */
+button {
   background-color: red;
-  color: white;
+  color: #fff;
   border: none;
   padding: 10px 20px;
-  font-weight: bold;
+  border-radius: 25px;
   cursor: pointer;
-  border-radius: 5px;
   transition: 0.3s;
+  font-size: 1rem;
 }
 
-.add-to-cart:hover {
-  background-color: #ff4c4c;
-}
-
-/* COMING SOON SECTION */
-.coming-soon {
-  text-align: center;
-  padding: 60px 0;
-  color: gray;
-}
-
-/* CHECKOUT MODAL */
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-}
-
-.hidden {
-  display: none;
-}
-
-.modal-content {
-  background-color: #111;
-  border: 2px solid red;
-  padding: 20px;
-  border-radius: 10px;
-  width: 90%;
-  max-width: 400px;
-}
-
-.modal-content h2 {
+button:hover {
+  background-color: #fff;
   color: red;
-  text-align: center;
+}
+
+/* Coming Soon */
+.coming-soon {
+  background-color: #111;
+  padding: 40px 10px;
+  border-top: 2px solid red;
+  border-bottom: 2px solid red;
+}
+
+.coming-soon h2 {
+  color: #fff;
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+}
+
+/* Checkout Section */
+.checkout-section {
+  padding: 40px 10px;
+  background-color: #000;
+}
+
+.checkout-section h2 {
+  color: red;
+  font-size: 2rem;
   margin-bottom: 20px;
 }
 
-.modal-content label {
-  display: block;
-  margin: 10px 0 5px;
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
-.modal-content input,
-.modal-content textarea {
-  width: 100%;
-  padding: 8px;
-  background-color: #222;
-  border: 1px solid #444;
-  color: white;
-  border-radius: 5px;
+form input,
+form textarea {
+  padding: 12px;
+  border: 2px solid #222;
+  border-radius: 10px;
+  background-color: #111;
+  color: #fff;
+  font-size: 1rem;
 }
 
-.place-order {
-  background-color: red;
-  border: none;
-  color: white;
-  padding: 10px;
-  width: 100%;
-  margin-top: 15px;
-  cursor: pointer;
-  border-radius: 5px;
+form textarea {
+  height: 100px;
+  resize: none;
 }
 
-.cancel {
-  background-color: #333;
-  border: none;
-  color: white;
-  padding: 10px;
-  width: 100%;
-  margin-top: 10px;
-  cursor: pointer;
-  border-radius: 5px;
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: red;
+}
+
+/* Footer */
+footer {
+  background-color: #000;
+  padding: 20px;
+  border-top: 2px solid red;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+  .brand-name {
+    font-size: 2rem;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .product-card img {
+    height: 250px;
+  }
+
+  form {
+    width: 90%;
+  }
 }
