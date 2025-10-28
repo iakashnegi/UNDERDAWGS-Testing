@@ -6,6 +6,7 @@ const closeCart = document.getElementById("close-cart");
 const checkoutBtn = document.getElementById("checkout-btn");
 const checkoutForm = document.getElementById("checkout-form");
 const closeCheckout = document.getElementById("close-checkout");
+const cartCount = document.getElementById("cart-count");
 
 cartBtn.addEventListener("click", () => {
   cartPopup.style.display = "block";
@@ -30,8 +31,13 @@ document.querySelectorAll(".add-cart").forEach((btn) => {
     const name = product.querySelector("h3").textContent;
     const price = 1200;
     const size = product.querySelector(".size").value;
+
     cart.push({ name, price, size });
     updateCart();
+
+    // 🔥 Add pulse animation
+    cartBtn.classList.add("pulse");
+    setTimeout(() => cartBtn.classList.remove("pulse"), 800);
   });
 });
 
@@ -49,7 +55,7 @@ function updateCart() {
   });
 
   document.getElementById("cart-total").textContent = total;
-  document.getElementById("cart-count").textContent = cart.length;
+  cartCount.textContent = cart.length;
 }
 
 function removeFromCart(index) {
