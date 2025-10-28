@@ -1,53 +1,61 @@
-// CART SYSTEM
+// ========== CART SYSTEM ==========
 let cart = [];
 
-// Add to Cart Function
-function addToCart(productName, price) {
-  cart.push({ productName, price });
-  alert(`${productName} added to cart!`);
-  updateCheckoutForm();
-}
+// Create floating cart icon dynamically
+document.addEventListener("DOMContentLoaded", () => {
+  const cartIcon = document.createElement("div");
+  cartIcon.id = "cart-icon";
+  cartIcon.innerHTML = `
+    🛒 <span id="cart-count">0</span>
+  `;
+  document.body.appendChild(cartIcon);
 
-// Update checkout form automatically with latest item
-function updateCheckoutForm() {
-  if (cart.length > 0) {
-    const lastItem = cart[cart.length - 1];
-    document.getElementById("productName").value = lastItem.productName;
-    document.getElementById("price").value = lastItem.price;
-  }
-}
+  const cartPopup = document.createElement("div");
+  cartPopup.id = "cart-popup";
+  cartPopup.innerHTML = `
+    <h3>Your Cart</h3>
+    <ul id="cart-items"></ul>
+    <button id="checkoutBtn">Checkout</button>
+  `;
+  document.body.appendChild(cartPopup);
 
-// Handle Checkout Form Submission
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("orderForm");
-
-  form.addEventListener("submit", async function (event) {
-    event.preventDefault();
-
-    const formData = new FormData(form);
-
-    try {
-      const response = await fetch("https://formspree.io/f/movpedod", {
-        method: "POST",
-        body: formData,
-        headers: { Accept: "application/json" },
-      });
-
-      if (response.ok) {
-        alert("✅ Order placed successfully! You’ll receive a confirmation soon.");
-        form.reset();
-        cart = [];
-      } else {
-        alert("❌ Something went wrong. Please try again!");
-      }
-    } catch (error) {
-      alert("⚠️ Network error. Please check your connection.");
-    }
+  // Cart icon click toggles popup visibility
+  cartIcon.addEventListener("click", () => {
+    cartPopup.classList.toggle("show");
   });
+
+  document.getElementById("checkoutBtn").addEventListener("click", () => {
+    document.getElementById("cart-popup").classList.remove("show");
+    document.querySelector("#checkout").scrollIntoView({ behavior: "smooth" });
+  });
+
+  // Attach submit listener for Formspree
+  const form = document.getElementById("orderForm");
+  form.addEventListener("submit", handleFormSubmit);
 });
 
-// Cancel button
-function cancelOrder() {
-  document.getElementById("orderForm").reset();
-  alert("Order canceled!");
+// ========== FUNCTIONS ==========
+
+// Add product to cart
+function addToCart(productName, price) {
+  cart.push({ productName, price });
+  updateCartDisplay();
+  alert(`${productName} added to your cart 🐾`);
 }
+
+// Update floating cart UI
+function updateCartDisplay() {
+  document.getElementById("cart-count").textContent = cart.length;
+
+  const itemsList = document.getElementById("cart-items");
+  itemsList.innerHTML = "";
+
+  cart.forEach((item, index) => {
+    const li = document.createElement("li");
+    li.textContent = `${item.productName} - ₹${item.price}`;
+    itemsList.appendChild(li);
+  });
+
+  // Auto-fill checkout form with last added item
+  if (cart.length > 0) {
+    const last = cart[cart.length -
