@@ -1,37 +1,138 @@
-/* === GENERAL === */
 body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background-color: #000;
+  font-family: 'Arial', sans-serif;
+  background: #000;
   color: #fff;
-  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 header {
+  background: #111;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #000;
-  padding: 10px 20px;
-  border-bottom: 2px solid red;
+  padding: 15px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-.logo-container {
+.logo-section {
   display: flex;
   align-items: center;
-  gap: 10px;
 }
 
 .logo {
-  width: 50px;
   height: 50px;
-  object-fit: cover;
+  margin-right: 10px;
 }
 
 h1 {
-  font-size: 1.5rem;
   color: red;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
+}
+
+.hero {
+  text-align: center;
+  padding: 30px;
+  background: #111;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: red;
+}
+
+.product-grid {
+  text-align: center;
+  padding: 20px;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.product {
+  background: #1a1a1a;
+  border-radius: 10px;
+  padding: 15px;
+  transition: 0.3s;
+}
+
+.product:hover {
+  transform: scale(1.05);
+}
+
+.product img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.price {
+  color: #fff;
+}
+
+.price .old {
+  text-decoration: line-through;
+  color: grey;
+  margin-right: 5px;
+}
+
+.add-cart {
+  background: red;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.coming-soon {
+  background: #222;
+  padding: 25px;
+  text-align: center;
+  color: #fff;
+  font-size: 1.2rem;
+  border-top: 2px solid red;
+}
+
+/* CART POPUP */
+.cart-popup {
+  display: none;
+  position: fixed;
+  right: 20px;
+  top: 80px;
+  background: #111;
+  border: 2px solid red;
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 200;
+  width: 90%;
+  max-width: 350px;
+}
+
+.cart-popup ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cart-popup button {
+  background: red;
+  color: white;
+  border: none;
+  margin: 10px 5px 0;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* CART COUNT BADGE */
+.cart-container {
+  position: relative;
 }
 
 #cart-btn {
@@ -44,193 +145,54 @@ h1 {
   font-weight: bold;
 }
 
-/* === NAVIGATION === */
-nav {
-  text-align: center;
-  background-color: #111;
-  padding: 10px 0;
-}
-
-nav a {
+#cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #ff0000;
   color: white;
-  text-decoration: none;
-  margin: 0 10px;
-  font-weight: bold;
-  transition: color 0.3s;
-}
-
-nav a.active,
-nav a:hover {
-  color: red;
-}
-
-/* === PRODUCT GRID === */
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 15px;
-  padding: 20px;
-}
-
-.product {
-  background-color: #111;
-  border-radius: 12px;
-  padding: 10px;
-  text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.product:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 15px red;
-}
-
-.product img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-.product h3 {
-  font-size: 1rem;
-  color: red;
-  margin: 10px 0 5px;
-}
-
-.price {
-  font-weight: bold;
-  color: #fff;
-}
-
-.size {
-  width: 90%;
-  margin: 8px 0;
-  padding: 5px;
-  border: 1px solid red;
-  border-radius: 6px;
-  background: #000;
-  color: #fff;
-  text-align: center;
-}
-
-.add-to-cart {
-  background-color: red;
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s;
-}
-
-.add-to-cart:hover {
-  background-color: #b30000;
-}
-
-/* === MODALS (Cart, Checkout, T-Shirts) === */
-.modal {
-  display: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 0.8rem;
+  display: flex;
   justify-content: center;
   align-items: center;
+  font-weight: bold;
+  border: 2px solid #000;
+}
+
+/* CHECKOUT FORM */
+.checkout-form {
+  display: none;
   position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.85);
-  z-index: 1000;
-  animation: fadeIn 0.3s ease-in-out;
-}
-
-.modal-content {
-  background-color: #111;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #111;
   border: 2px solid red;
-  border-radius: 15px;
   padding: 20px;
-  max-width: 350px;
+  border-radius: 10px;
+  z-index: 300;
   width: 90%;
-  text-align: center;
-  animation: popUp 0.3s ease-in-out;
+  max-width: 400px;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes popUp {
-  from { transform: scale(0.9); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-
-.modal-content h2 {
-  color: red;
-  font-size: 1.2rem;
-  margin-bottom: 15px;
-}
-
-.modal-content button,
-.modal-content input,
-.modal-content select {
-  width: 90%;
+.checkout-form input {
+  width: 100%;
   padding: 10px;
   margin: 8px 0;
-  border-radius: 8px;
-  border: 1px solid red;
-  background-color: #000;
+  border: none;
+  border-radius: 5px;
+}
+
+.checkout-form button {
+  width: 48%;
+  margin: 5px 1%;
+  background: red;
   color: white;
-}
-
-.modal-content button {
-  background-color: red;
   border: none;
+  padding: 10px;
+  border-radius: 6px;
   cursor: pointer;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.modal-content button:hover {
-  background-color: #b30000;
-}
-
-/* === CART LIST === */
-#cart-items {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 15px;
-  text-align: left;
-}
-
-#cart-items li {
-  display: flex;
-  justify-content: space-between;
-  margin: 5px 0;
-}
-
-#cart-items button {
-  background: transparent;
-  color: red;
-  border: none;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-/* === MOBILE GRID FIX (4 visible hoodies at once) === */
-@media (max-width: 768px) {
-  .product-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
-
-  .product img {
-    height: 180px;
-  }
-
-  header h1 {
-    font-size: 1.2rem;
-  }
-
-  #cart-btn {
-    padding: 6px 10px;
-    font-size: 0.9rem;
-  }
 }
