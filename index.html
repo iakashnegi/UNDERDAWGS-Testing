@@ -3,102 +3,86 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UNDERDAWGS | Hoodies</title>
+  <title>UNDERDAWGS</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-  <header>
-    <img src="logo.png" alt="UNDERDAWGS Logo" class="logo" />
-    <h1>UNDERDAWGS</h1>
-    <div class="cart-icon">
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo-section">
+      <img src="images/logo.png" alt="UNDERDAWGS Logo" class="logo" />
+      <h1 class="brand">UNDERDAWGS</h1>
+    </div>
+    <div class="cart">
+      <span class="cart-icon">🛒</span>
       <span id="cart-count">0</span>
-      <img src="https://cdn-icons-png.flaticon.com/512/833/833314.png" alt="Cart" />
     </div>
   </header>
 
-  <section id="hoodies">
-    <h2>HOODIES</h2>
-    <div class="product-grid">
-      <div class="product">
-        <img src="hoodie1.jpg" alt="Hoodie 1" />
-        <h3>Classic UNDERDAWGS Hoodie</h3>
-        <p>₹1999</p>
-        <button class="add-to-cart" data-name="Classic UNDERDAWGS Hoodie" data-price="1999">Add to Cart</button>
+  <!-- MAIN SECTION -->
+  <main>
+    <section class="collection">
+      <h2>HOODIES</h2>
+      <div class="product-grid">
+        <!-- Example hoodie cards -->
+        <div class="product-card">
+          <img src="images/hoodie1.jpg" alt="Hoodie 1" />
+          <h3>Classic UNDERDAWGS Hoodie</h3>
+          <p class="price">₹1999</p>
+          <button class="add-to-cart" data-name="Classic UNDERDAWGS Hoodie" data-price="1999">Add to Cart</button>
+        </div>
+        <div class="product-card">
+          <img src="images/hoodie2.jpg" alt="Hoodie 2" />
+          <h3>Mountain Spirit Hoodie</h3>
+          <p class="price">₹1899</p>
+          <button class="add-to-cart" data-name="Mountain Spirit Hoodie" data-price="1899">Add to Cart</button>
+        </div>
+        <div class="product-card">
+          <img src="images/hoodie3.jpg" alt="Hoodie 3" />
+          <h3>Born from the Hills Hoodie</h3>
+          <p class="price">₹1799</p>
+          <button class="add-to-cart" data-name="Born from the Hills Hoodie" data-price="1799">Add to Cart</button>
+        </div>
+        <div class="product-card">
+          <img src="images/hoodie4.jpg" alt="Hoodie 4" />
+          <h3>Peaks Edition Hoodie</h3>
+          <p class="price">₹2099</p>
+          <button class="add-to-cart" data-name="Peaks Edition Hoodie" data-price="2099">Add to Cart</button>
+        </div>
       </div>
+    </section>
 
-      <div class="product">
-        <img src="hoodie2.jpg" alt="Hoodie 2" />
-        <h3>Mountain Print Hoodie</h3>
-        <p>₹1899</p>
-        <button class="add-to-cart" data-name="Mountain Print Hoodie" data-price="1899">Add to Cart</button>
-      </div>
+    <!-- COMING SOON SECTION -->
+    <section class="coming-soon">
+      <h2>T-SHIRTS (COMING SOON)</h2>
+    </section>
+  </main>
 
-      <div class="product">
-        <img src="hoodie3.jpg" alt="Hoodie 3" />
-        <h3>Peak Style Hoodie</h3>
-        <p>₹1799</p>
-        <button class="add-to-cart" data-name="Peak Style Hoodie" data-price="1799">Add to Cart</button>
-      </div>
-
-      <div class="product">
-        <img src="hoodie4.jpg" alt="Hoodie 4" />
-        <h3>Street Classic Hoodie</h3>
-        <p>₹1699</p>
-        <button class="add-to-cart" data-name="Street Classic Hoodie" data-price="1699">Add to Cart</button>
-      </div>
-
-      <div class="product">
-        <img src="hoodie5.jpg" alt="Hoodie 5" />
-        <h3>Vintage UNDERDAWGS</h3>
-        <p>₹1899</p>
-        <button class="add-to-cart" data-name="Vintage UNDERDAWGS" data-price="1899">Add to Cart</button>
-      </div>
-
-      <div class="product">
-        <img src="hoodie6.jpg" alt="Hoodie 6" />
-        <h3>Bold Red Hoodie</h3>
-        <p>₹1999</p>
-        <button class="add-to-cart" data-name="Bold Red Hoodie" data-price="1999">Add to Cart</button>
-      </div>
-
-      <div class="product">
-        <img src="hoodie7.jpg" alt="Hoodie 7" />
-        <h3>Signature Print Hoodie</h3>
-        <p>₹2099</p>
-        <button class="add-to-cart" data-name="Signature Print Hoodie" data-price="2099">Add to Cart</button>
-      </div>
-
-      <div class="product">
-        <img src="hoodie8.jpg" alt="Hoodie 8" />
-        <h3>Classic Black Hoodie</h3>
-        <p>₹1799</p>
-        <button class="add-to-cart" data-name="Classic Black Hoodie" data-price="1799">Add to Cart</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Checkout Modal -->
-  <div id="checkout-modal" class="modal hidden">
+  <!-- CHECKOUT MODAL -->
+  <div id="checkout-modal" class="hidden modal">
     <div class="modal-content">
       <h2>Checkout</h2>
-      <form id="checkout-form" action="https://formspree.io/f/movpedod" method="POST">
-        <label for="address">Delivery Address:</label>
-        <textarea id="address" name="address" placeholder="Enter full delivery address..." required></textarea>
+      <form id="checkout-form">
+        <label>Product Name</label>
+        <input type="text" id="product-name" name="product" readonly />
 
-        <input type="hidden" name="_subject" value="New UNDERDAWGS Order">
-        <input type="hidden" name="product" id="product-name">
-        <input type="hidden" name="price" id="product-price">
+        <label>Price</label>
+        <input type="text" id="product-price" name="price" readonly />
 
-        <button type="submit" class="place-order-btn">Place Order</button>
-        <button type="button" id="cancel-order">Cancel</button>
+        <label>Your Name</label>
+        <input type="text" name="name" required />
+
+        <label>Email</label>
+        <input type="email" name="email" required />
+
+        <label>Address</label>
+        <textarea name="address" required></textarea>
+
+        <button type="submit" class="place-order">Place Order</button>
+        <button type="button" id="cancel-order" class="cancel">Cancel</button>
       </form>
     </div>
   </div>
-
-  <footer>
-    <p>© 2025 UNDERDAWGS. All Rights Reserved.</p>
-  </footer>
 
   <script src="script.js"></script>
 </body>
