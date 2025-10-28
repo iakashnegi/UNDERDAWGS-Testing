@@ -147,3 +147,50 @@ checkoutFormElement.addEventListener("submit", async (e) => {
     showToast("⚠️ Network error!");
   }
 });
+// PRODUCT MODAL FEATURE
+const productModal = document.getElementById("product-modal");
+const closeModal = document.getElementById("close-modal");
+const modalImage = document.getElementById("modal-image");
+const modalName = document.getElementById("modal-name");
+const modalDesc = document.getElementById("modal-desc");
+const modalPrice = document.getElementById("modal-price");
+const modalSize = document.getElementById("modal-size");
+const modalAddCart = document.getElementById("modal-add-cart");
+
+const productCards = document.querySelectorAll(".product");
+
+productCards.forEach(card => {
+  card.addEventListener("click", () => {
+    const name = card.getAttribute("data-name");
+    const price = card.getAttribute("data-price");
+    const desc = card.getAttribute("data-desc");
+    const image = card.getAttribute("data-image");
+
+    modalName.textContent = name;
+    modalDesc.textContent = desc;
+    modalPrice.textContent = `₹${price}`;
+    modalImage.src = image;
+
+    productModal.style.display = "flex";
+  });
+});
+
+closeModal.addEventListener("click", () => {
+  productModal.style.display = "none";
+});
+
+productModal.addEventListener("click", (e) => {
+  if (e.target === productModal) {
+    productModal.style.display = "none";
+  }
+});
+
+modalAddCart.addEventListener("click", () => {
+  const name = modalName.textContent;
+  const price = parseInt(modalPrice.textContent.replace(/[^\d]/g, ""));
+  const size = modalSize.value;
+
+  cart.push({ name, price, size });
+  updateCart();
+  productModal.style.display = "none";
+});
