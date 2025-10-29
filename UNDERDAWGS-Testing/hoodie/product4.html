@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Street Rebel Hoodie | UNDERDAWGS</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="logo-section" onclick="window.location.href='index.html'">
+      <img src="logo.png" alt="UNDERDAWGS" class="logo" />
+      <div class="brand-text">
+        <span class="brand-name">UNDERDAWGS</span>
+        <span class="tagline-small">Born Underground. Born Everywhere.</span>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px">
+      <button class="btn-back" onclick="window.location.href='index.html'">← Home</button>
+      <button id="cart-btn" class="cart-btn">🛒 Cart (<span id="cart-count">0</span>)</button>
+    </div>
+  </header>
+
+  <section class="product-detail-page">
+    <div class="product-detail-container">
+      <img src="hoodie4.jpg" alt="Street Rebel Hoodie" class="detail-image" />
+      <div class="detail-info">
+        <h2>Street Rebel Hoodie</h2>
+        <div class="detail-price"><span class="old">₹2399</span> ₹1699</div>
+        <p class="detail-description">
+          The <strong>Street Rebel Hoodie</strong> was made for the rule-breakers. Oversized fit, vintage wash, and bold chest print — this one’s pure UNDERDAWGS energy.
+        </p>
+
+        <label for="size4" class="small-muted">Select Size</label>
+        <select id="size4" class="size-select">
+          <option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
+        </select>
+
+        <div class="detail-cta-row">
+          <button class="add-to-cart" data-name="Street Rebel Hoodie" data-price="1699">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>

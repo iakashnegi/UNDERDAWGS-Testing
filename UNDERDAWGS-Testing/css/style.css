@@ -1,0 +1,278 @@
+/* =============================
+   UNDERDAWGS OFFICIAL STYLE.CSS
+   ============================= */
+
+/* --- Global Styles --- */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #000;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #000;
+  border-bottom: 2px solid #ff1a1a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+header img {
+  height: 60px;
+  width: 60px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.brand-text h1 {
+  color: #ff1a1a;
+  font-size: 1.6rem;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.brand-text p {
+  color: #ccc;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.cart-btn {
+  background: #ff1a1a;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.cart-btn:hover {
+  background: #e60000;
+}
+
+/* --- Hero Section --- */
+.hero {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 15px;
+  color: #ff1a1a;
+}
+
+.hero span {
+  font-size: 1.8rem;
+}
+
+/* --- Section Title --- */
+.section-title {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #ff1a1a;
+  margin: 20px 0;
+}
+
+/* --- Product Grid --- */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.product-card {
+  background: #111;
+  border-radius: 15px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+}
+
+.product-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  background: #000;
+}
+
+.product-card h3 {
+  color: #fff;
+  font-size: 1rem;
+  margin: 12px 0 4px 0;
+}
+
+.price {
+  margin-top: 6px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* --- Price Display Fix --- */
+.price .old-price {
+  color: #888;
+  text-decoration: line-through;
+  margin-right: 6px;
+  font-weight: 400;
+}
+
+.price .new-price {
+  color: #ff1a1a;
+  font-weight: 600;
+}
+
+/* --- Cart Popup --- */
+.cart-popup {
+  position: fixed;
+  right: 20px;
+  top: 80px;
+  background: #111;
+  border: 2px solid #ff1a1a;
+  border-radius: 10px;
+  padding: 15px;
+  width: 300px;
+  display: none;
+  z-index: 1000;
+}
+
+.cart-popup h2 {
+  color: #ff1a1a;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.cart-popup ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #fff;
+}
+
+.cart-popup li {
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #333;
+  padding-bottom: 6px;
+}
+
+.checkout-btn {
+  background: #ff1a1a;
+  color: #fff;
+  border: none;
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.checkout-btn:hover {
+  background: #e60000;
+}
+
+/* --- Product Page Styles --- */
+.product-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #111;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.2);
+  text-align: center;
+}
+
+.product-container img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  border: 2px solid #ff1a1a;
+}
+
+.product-container h2 {
+  color: #ff1a1a;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.product-container .price {
+  margin-bottom: 15px;
+}
+
+.product-container .description {
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.size-select {
+  margin: 10px 0 20px 0;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ff1a1a;
+  background: #000;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.add-to-cart-btn {
+  background: #ff1a1a;
+  border: none;
+  padding: 12px 20px;
+  color: #e2d7d7;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.add-to-cart-btn:hover {
+  background: #e60000;
+}
+
+
+/* --- Footer --- */
+footer {
+  text-align: center;
+  color: #888;
+  font-size: 0.9rem;
+  padding: 15px;
+  border-top: 2px solid #ff1a1a;
+  background: #000;
+}
+
+@media (max-width: 768px) {
+  header img {
+    height: 50px;
+    width: 50px;
+  }
+
+  .brand-text h1 {
+    font-size: 1.4rem;
+  }
+
+  .product-card img {
+    height: 200px;
+  }
+}
